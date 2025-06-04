@@ -76,9 +76,10 @@
                             <MudCard Outlined="true">
                                 <MudCardContent>
                                     <MudText Typo="Typo.subtitle1" Color="Color.Primary">[Step 1/2] Scan Quantity QR Code</MudText>
-                                    <MudTextField @bind-Value="quantityInput" Label="Quantity" Variant="Variant.Outlined" 
+                                    <MudTextField @ref="quantityField" @bind-Value="quantityInput" Label="Quantity" Variant="Variant.Outlined" 
                                                 Immediate="true" OnKeyDown="@OnQuantityKeyDown" Disabled="@(scanStep != ScanStep.Quantity)"
-                                                HelperText="Scan or enter the quantity (number only)" Class="mt-3" />
+                                                HelperText="Scan or enter the quantity (number only)" Class="mt-3" 
+                                                AutoFocus="true" />
                                     @if (!string.IsNullOrEmpty(quantityInput) && scanStep == ScanStep.Quantity)
                                     {
                                         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ValidateQuantity" Class="mt-2">
@@ -95,7 +96,7 @@
                                     <MudText Typo="Typo.subtitle1" Color="@(scanStep == ScanStep.Plant ? Color.Primary : Color.Default)">
                                         [Step 2/2] Scan Plant QR Code
                                     </MudText>
-                                    <MudTextField @bind-Value="plantQRInput" Label="Plant QR Code" Variant="Variant.Outlined" 
+                                    <MudTextField @ref="plantField" @bind-Value="plantQRInput" Label="Plant QR Code" Variant="Variant.Outlined" 
                                                 Immediate="true" OnKeyDown="@OnPlantKeyDown" Disabled="@(scanStep != ScanStep.Plant)"
                                                 HelperText="Format: YYYY-MM-DD_GUID or YY-MM-DD_ShortGUID" Class="mt-3" />
                                     @if (!string.IsNullOrEmpty(plantQRInput) && scanStep == ScanStep.Plant)
@@ -194,11 +195,22 @@
     private string quantityInput = "";
     private string plantQRInput = "";
     private ScannedPlant? currentScan;
+    private MudTextField<string>? quantityField;
+    private MudTextField<string>? plantField;
     
     protected override async Task OnInitializedAsync()
     {
         Logger.LogInformation("OrderScanning page initialized for order: {OrderKey}", OrderKey);
         await LoadOrder();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && quantityField != null)
+        {
+            await Task.Delay(100);
+            await quantityField.FocusAsync();
+        }
     }
     
     private async Task LoadOrder()
@@ -234,15 +246,15 @@
         return ProductCode.Parse(productCode);
     }
     
-    private void OnQuantityKeyDown(KeyboardEventArgs e)
+    private async Task OnQuantityKeyDown(KeyboardEventArgs e)
     {
         if (e.Key == "Enter" && !string.IsNullOrEmpty(quantityInput))
         {
-            ValidateQuantity();
+            await ValidateQuantity();
         }
     }
     
-    private void ValidateQuantity()
+    private async Task ValidateQuantity()
     {
         if (int.TryParse(quantityInput, out int quantity) && quantity > 0)
         {
@@ -258,6 +270,13 @@
                 
                 scanStep = ScanStep.Plant;
                 Snackbar.Add($"Quantity {quantity} confirmed. Now scan the plant QR code.", Severity.Success);
+                
+                // Auto-focus the plant field
+                await Task.Delay(100);
+                if (plantField != null)
+                {
+                    await plantField.FocusAsync();
+                }
             }
             else
             {
@@ -307,6 +326,13 @@
             quantityInput = "";
             plantQRInput = "";
             scanStep = ScanStep.Quantity;
+            
+            // Focus back on quantity field for next scan
+            await Task.Delay(100);
+            if (quantityField != null && totalScanned < parsedCode?.TotalQuantity)
+            {
+                await quantityField.FocusAsync();
+            }
             
             if (totalScanned == parsedCode?.TotalQuantity)
             {
