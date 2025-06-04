@@ -26,7 +26,12 @@
                 <MudCardContent>
                     <MudStack>
                         <MudTextField @ref="quantityField" @bind-Value="quantity" Label="Quantity" Variant="Variant.Outlined" 
-                                     T="int" InputType="InputType.Number" OnKeyDown="@OnQuantityKeyDown" />
+                                     T="int" InputType="InputType.Number" 
+                                     TextChanged="@OnQuantityChanged"
+                                     OnKeyDown="@OnQuantityKeyDown" 
+                                     OnBlur="@OnQuantityBlur"
+                                     Immediate="true" 
+                                     AutoFocus="true" />
                         
                         <MudSelect @ref="plantSelect" T="Plant" @bind-Value="selectedPlant" Label="Select Plant" Variant="Variant.Outlined" 
                                   AnchorOrigin="Origin.BottomCenter" ToStringFunc="@(p => p?.GetName("EN"))">
@@ -132,6 +137,7 @@
     private string qrCodeBase64 = "";
     private MudTextField<int>? quantityField;
     private MudSelect<Plant>? plantSelect;
+    private bool shouldAutoAdvance = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -199,14 +205,40 @@
 
     private async Task OnQuantityKeyDown(KeyboardEventArgs args)
     {
-        if (args.Key == "Enter" || args.Key == "Tab")
+        if (args.Key == "Enter")
         {
-            await Task.Delay(50); // Small delay to ensure the value is bound
-            if (plantSelect != null)
-            {
-                await plantSelect.FocusAsync();
-                await plantSelect.OpenMenu();
-            }
+            shouldAutoAdvance = true;
+            // Most barcode scanners send Enter after the data
+            // The blur event will handle the focus switch
+        }
+    }
+
+    private async Task OnQuantityChanged(string value)
+    {
+        if (!string.IsNullOrEmpty(value) && int.TryParse(value, out var qty))
+        {
+            quantity = qty;
+        }
+    }
+
+    private async Task OnQuantityBlur()
+    {
+        // If Enter was pressed (barcode scan) and we have a valid quantity
+        if (shouldAutoAdvance && quantity > 0)
+        {
+            shouldAutoAdvance = false;
+            await Task.Delay(50); // Small delay to ensure UI is ready
+            await FocusPlantSelect();
+        }
+    }
+
+    private async Task FocusPlantSelect()
+    {
+        if (plantSelect != null)
+        {
+            await plantSelect.FocusAsync();
+            await Task.Delay(100); // Small delay before opening menu
+            await plantSelect.OpenMenu();
         }
     }
 }
