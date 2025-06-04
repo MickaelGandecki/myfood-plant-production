@@ -78,7 +78,7 @@
                                 <MudCardContent>
                                     <MudText Typo="Typo.subtitle1" Color="Color.Primary">[Step 1/2] Scan Quantity QR Code</MudText>
                                     <MudTextField @ref="quantityField" @bind-Value="quantityInput" Label="Quantity" Variant="Variant.Outlined" 
-                                                Immediate="true" @onkeydown="@OnQuantityKeyDown" Disabled="@(scanStep != ScanStep.Quantity)"
+                                                Immediate="true" OnKeyDown="OnQuantityKeyDown" Disabled="@(scanStep != ScanStep.Quantity)"
                                                 HelperText="Scan or enter the quantity (number only)" Class="mt-3" />
                                     @if (!string.IsNullOrEmpty(quantityInput) && scanStep == ScanStep.Quantity)
                                     {
@@ -97,7 +97,7 @@
                                         [Step 2/2] Scan Plant QR Code
                                     </MudText>
                                     <MudTextField @ref="plantField" @bind-Value="plantQRInput" Label="Plant QR Code" Variant="Variant.Outlined" 
-                                                Immediate="true" @onkeydown="@OnPlantKeyDown" Disabled="@(scanStep != ScanStep.Plant)"
+                                                Immediate="true" OnKeyDown="OnPlantKeyDown" Disabled="@(scanStep != ScanStep.Plant)"
                                                 HelperText="Format: YYYY-MM-DD_GUID or YY-MM-DD_ShortGUID" Class="mt-3" />
                                     @if (!string.IsNullOrEmpty(plantQRInput) && scanStep == ScanStep.Plant)
                                     {
@@ -268,11 +268,11 @@
         return ProductCode.Parse(productCode);
     }
     
-    private void OnQuantityKeyDown(KeyboardEventArgs e)
+    private async Task OnQuantityKeyDown(KeyboardEventArgs e)
     {
         if (e.Key == "Enter" && !string.IsNullOrEmpty(quantityInput))
         {
-            _ = ValidateQuantity();
+            await ValidateQuantity();
         }
     }
     
@@ -311,11 +311,11 @@
         }
     }
     
-    private void OnPlantKeyDown(KeyboardEventArgs e)
+    private async Task OnPlantKeyDown(KeyboardEventArgs e)
     {
         if (e.Key == "Enter" && !string.IsNullOrEmpty(plantQRInput))
         {
-            _ = ValidatePlantQR();
+            await ValidatePlantQR();
         }
     }
     
