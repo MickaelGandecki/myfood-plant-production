@@ -1,0 +1,269 @@
+@page "/qr-scanner"
+@using PlantApp.Models
+@using PlantApp.Services
+@inject QrCodeService QrCodeService
+@inject PlantService PlantService
+@inject ISnackbar Snackbar
+
+<PageTitle>QR Code Scanner</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudText Typo="Typo.h4" GutterBottom="true">QR Code Scanner</MudText>
+    <MudText Typo="Typo.body1" Class="mb-4">
+        Scan plant QR codes to track production process.
+    </MudText>
+
+    <MudGrid>
+        <MudItem xs="12" md="6">
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Manual QR Code Input</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudStack>
+                        <MudTextField @bind-Value="qrCodeInput" Label="QR Code Data" Variant="Variant.Outlined" 
+                                     Placeholder="Enter QR code data manually" Lines="3" />
+                        
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="Icons.Material.Filled.Scanner" 
+                                  OnClick="ProcessQrCode" Disabled="string.IsNullOrEmpty(qrCodeInput)">
+                            Process QR Code
+                        </MudButton>
+                        
+                        <MudButton Variant="Variant.Outlined" Color="Color.Info" StartIcon="Icons.Material.Filled.Clear" 
+                                  OnClick="ClearInput">
+                            Clear
+                        </MudButton>
+                    </MudStack>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            @if (scannedPlant != null)
+            {
+                <MudCard>
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Scanned Plant Information</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudStack>
+                            <MudField Label="Plant ID" Variant="Variant.Text">
+                                <MudText>@scannedPlant.GetShortId()</MudText>
+                            </MudField>
+                            
+                            <MudField Label="Plant Name" Variant="Variant.Text">
+                                <MudText>@scannedPlant.PlantName</MudText>
+                            </MudField>
+                            
+                            <MudField Label="Quantity" Variant="Variant.Text">
+                                <MudText>@scannedPlant.Quantity</MudText>
+                            </MudField>
+                            
+                            <MudField Label="Seeding Date" Variant="Variant.Text">
+                                <MudText>@scannedPlant.SeedingDate.ToString("dd/MM/yyyy")</MudText>
+                            </MudField>
+                            
+                            <MudField Label="Status" Variant="Variant.Text">
+                                <MudChip T="string" Color="GetStatusColor(scannedPlant.Status)" Size="Size.Small">
+                                    @scannedPlant.Status
+                                </MudChip>
+                            </MudField>
+                            
+                            <MudField Label="Last Scanned" Variant="Variant.Text">
+                                <MudText>@scannedPlant.LastScanned.ToString("dd/MM/yyyy HH:mm")</MudText>
+                            </MudField>
+                            
+                            <MudStack Row>
+                                <MudButton Variant="Variant.Filled" Color="Color.Success" StartIcon="Icons.Material.Filled.Update" 
+                                          OnClick="UpdateStatus">
+                                    Update Status
+                                </MudButton>
+                                <MudButton Variant="Variant.Outlined" Color="Color.Info" StartIcon="Icons.Material.Filled.Print" 
+                                          OnClick="PrintLabel">
+                                    Print Label
+                                </MudButton>
+                            </MudStack>
+                        </MudStack>
+                    </MudCardContent>
+                </MudCard>
+            }
+        </MudItem>
+    </MudGrid>
+
+    <MudCard Class="mt-4">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">Scanning History</MudText>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                <MudButton Variant="Variant.Outlined" Color="Color.Warning" StartIcon="Icons.Material.Filled.Clear" 
+                          OnClick="ClearHistory" Disabled="!scanHistory.Any()">
+                    Clear History
+                </MudButton>
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent>
+            @if (scanHistory.Any())
+            {
+                <MudDataGrid T="ScannedPlant" Items="@scanHistory" SortMode="SortMode.Single" 
+                           Hover="true" Striped="true" Dense="true">
+                    <Columns>
+                        <PropertyColumn Property="x => x.GetShortId()" Title="ID" />
+                        <PropertyColumn Property="x => x.PlantName" Title="Plant" />
+                        <PropertyColumn Property="x => x.Quantity" Title="Qty" />
+                        <PropertyColumn Property="x => x.Status" Title="Status">
+                            <CellTemplate>
+                                <MudChip T="string" Color="GetStatusColor(context.Item.Status)" Size="Size.Small">
+                                    @context.Item.Status
+                                </MudChip>
+                            </CellTemplate>
+                        </PropertyColumn>
+                        <PropertyColumn Property="x => x.LastScanned" Title="Scanned" Format="dd/MM/yyyy HH:mm" />
+                        <TemplateColumn CellClass="d-flex justify-end">
+                            <CellTemplate>
+                                <MudButton Variant="Variant.Text" Color="Color.Primary" Size="Size.Small" 
+                                          StartIcon="Icons.Material.Filled.Visibility" OnClick="@(() => ViewDetails(context.Item))">
+                                    View
+                                </MudButton>
+                            </CellTemplate>
+                        </TemplateColumn>
+                    </Columns>
+                    <PagerContent>
+                        <MudDataGridPager T="ScannedPlant" />
+                    </PagerContent>
+                </MudDataGrid>
+            }
+            else
+            {
+                <MudAlert Severity="Severity.Info">
+                    <MudText>No QR codes scanned yet. Scan your first QR code above.</MudText>
+                </MudAlert>
+            }
+        </MudCardContent>
+    </MudCard>
+</MudContainer>
+
+@code {
+    private string qrCodeInput = "";
+    private ScannedPlant? scannedPlant;
+    private List<ScannedPlant> scanHistory = new();
+
+    private async Task ProcessQrCode()
+    {
+        if (string.IsNullOrEmpty(qrCodeInput)) return;
+
+        try
+        {
+            var plant = ScannedPlant.ParseQrCode(qrCodeInput);
+            if (plant != null)
+            {
+                // Try to get plant details from service
+                var plants = await PlantService.GetAllPlantsAsync();
+                var matchedPlant = plants.FirstOrDefault(p => p.Id == plant.Id);
+                if (matchedPlant != null)
+                {
+                    plant.PlantName = matchedPlant.GetName("EN");
+                }
+                else
+                {
+                    plant.PlantName = "Unknown Plant";
+                }
+
+                plant.LastScanned = DateTime.Now;
+                scannedPlant = plant;
+                
+                // Add to history if not already present
+                var existingEntry = scanHistory.FirstOrDefault(s => s.Id == plant.Id);
+                if (existingEntry != null)
+                {
+                    existingEntry.LastScanned = DateTime.Now;
+                    existingEntry.Status = plant.Status;
+                }
+                else
+                {
+                    scanHistory.Insert(0, plant);
+                }
+
+                Snackbar.Add("QR Code processed successfully", Severity.Success);
+            }
+            else
+            {
+                Snackbar.Add("Invalid QR code format", Severity.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Error processing QR code: {ex.Message}", Severity.Error);
+        }
+    }
+
+    private void ClearInput()
+    {
+        qrCodeInput = "";
+        scannedPlant = null;
+    }
+
+    private void ClearHistory()
+    {
+        scanHistory.Clear();
+        Snackbar.Add("Scan history cleared", Severity.Warning);
+    }
+
+    private void ViewDetails(ScannedPlant plant)
+    {
+        scannedPlant = plant;
+        qrCodeInput = plant.GetQrCodeData();
+    }
+
+    private void UpdateStatus()
+    {
+        if (scannedPlant == null) return;
+        
+        // Cycle through statuses
+        scannedPlant.Status = scannedPlant.Status switch
+        {
+            "Seeded" => "Growing",
+            "Growing" => "Ready",
+            "Ready" => "Harvested",
+            "Harvested" => "Delivered",
+            _ => "Seeded"
+        };
+        
+        scannedPlant.LastScanned = DateTime.Now;
+        
+        // Update in history
+        var historyEntry = scanHistory.FirstOrDefault(s => s.Id == scannedPlant.Id);
+        if (historyEntry != null)
+        {
+            historyEntry.Status = scannedPlant.Status;
+            historyEntry.LastScanned = scannedPlant.LastScanned;
+        }
+        
+        Snackbar.Add($"Status updated to {scannedPlant.Status}", Severity.Success);
+    }
+
+    private void PrintLabel()
+    {
+        if (scannedPlant == null) return;
+        
+        // TODO: Implement Zebra printer integration
+        Snackbar.Add("Print label functionality coming soon", Severity.Info);
+    }
+
+    private Color GetStatusColor(string status)
+    {
+        return status switch
+        {
+            "Seeded" => Color.Warning,
+            "Growing" => Color.Info,
+            "Ready" => Color.Success,
+            "Harvested" => Color.Primary,
+            "Delivered" => Color.Dark,
+            _ => Color.Default
+        };
+    }
+}

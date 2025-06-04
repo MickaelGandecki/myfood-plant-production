@@ -1,0 +1,350 @@
+@page "/manufacturing/{OrderKey}/scan"
+@using PlantApp.Models
+@using PlantApp.Services
+@inject OdooService OdooService
+@inject PlantService PlantService
+@inject NavigationManager Navigation
+@inject ISnackbar Snackbar
+@inject ILogger<OrderScanning> Logger
+
+<PageTitle>Scan Order - @OrderKey</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    @if (order == null)
+    {
+        <MudProgressCircular Indeterminate="true" />
+        <MudText>Loading order details...</MudText>
+    }
+    else
+    {
+        <MudText Typo="Typo.h4" GutterBottom="true">Manufacturing Order: @order.OrderKey</MudText>
+        
+        <MudGrid>
+            <MudItem xs="12" md="6">
+                <MudCard>
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6">Order Details</MudText>
+                        <MudSimpleTable Dense="true" Class="mt-2">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Product:</strong></td>
+                                    <td>@order.ProductRef - @order.ProductName</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Customer:</strong></td>
+                                    <td>@order.PartnerName</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Language:</strong></td>
+                                    <td>@order.CustomerLanguage</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kit Type:</strong></td>
+                                    <td>@parsedCode?.KitType</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Target Quantity:</strong></td>
+                                    <td>@parsedCode?.TotalQuantity plants</td>
+                                </tr>
+                            </tbody>
+                        </MudSimpleTable>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+            
+            <MudItem xs="12" md="6">
+                <MudCard>
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6">Scanning Progress</MudText>
+                        <MudProgressLinear Value="@progressPercentage" Size="Size.Large" Color="Color.Primary" Class="mt-2 mb-2">
+                            <MudText Typo="Typo.body2">@totalScanned / @(parsedCode?.TotalQuantity ?? 0) plants</MudText>
+                        </MudProgressLinear>
+                        <MudText>Remaining: @((parsedCode?.TotalQuantity ?? 0) - totalScanned) plants</MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+
+        @if (parsedCode != null && totalScanned < parsedCode.TotalQuantity)
+        {
+            <MudCard Class="mt-4">
+                <MudCardContent>
+                    <MudText Typo="Typo.h6">Scan #@(scannedPlants.Count + 1)</MudText>
+                    
+                    <MudGrid Class="mt-3">
+                        <MudItem xs="12" md="6">
+                            <MudCard Outlined="true">
+                                <MudCardContent>
+                                    <MudText Typo="Typo.subtitle1" Color="Color.Primary">[Step 1/2] Scan Quantity QR Code</MudText>
+                                    <MudTextField @bind-Value="quantityInput" Label="Quantity" Variant="Variant.Outlined" 
+                                                Immediate="true" OnKeyDown="@OnQuantityKeyDown" Disabled="@(scanStep != ScanStep.Quantity)"
+                                                HelperText="Scan or enter the quantity (number only)" Class="mt-3" />
+                                    @if (!string.IsNullOrEmpty(quantityInput) && scanStep == ScanStep.Quantity)
+                                    {
+                                        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ValidateQuantity" Class="mt-2">
+                                            Confirm Quantity
+                                        </MudButton>
+                                    }
+                                </MudCardContent>
+                            </MudCard>
+                        </MudItem>
+                        
+                        <MudItem xs="12" md="6">
+                            <MudCard Outlined="true">
+                                <MudCardContent>
+                                    <MudText Typo="Typo.subtitle1" Color="@(scanStep == ScanStep.Plant ? Color.Primary : Color.Default)">
+                                        [Step 2/2] Scan Plant QR Code
+                                    </MudText>
+                                    <MudTextField @bind-Value="plantQRInput" Label="Plant QR Code" Variant="Variant.Outlined" 
+                                                Immediate="true" OnKeyDown="@OnPlantKeyDown" Disabled="@(scanStep != ScanStep.Plant)"
+                                                HelperText="Format: YYYY-MM-DD_GUID or YY-MM-DD_ShortGUID" Class="mt-3" />
+                                    @if (!string.IsNullOrEmpty(plantQRInput) && scanStep == ScanStep.Plant)
+                                    {
+                                        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ValidatePlantQR" Class="mt-2">
+                                            Confirm Plant
+                                        </MudButton>
+                                    }
+                                </MudCardContent>
+                            </MudCard>
+                        </MudItem>
+                    </MudGrid>
+
+                    @if (currentScan != null && currentScan.Quantity > 0)
+                    {
+                        <MudAlert Severity="Severity.Info" Class="mt-3">
+                            Current scan: @currentScan.Quantity plants
+                            @if (!string.IsNullOrEmpty(currentScan.SpeciesName))
+                            {
+                                <text> - @currentScan.SpeciesName (@currentScan.SowingDate)</text>
+                            }
+                        </MudAlert>
+                    }
+                </MudCardContent>
+            </MudCard>
+        }
+
+        @if (scannedPlants.Any())
+        {
+            <MudCard Class="mt-4">
+                <MudCardContent>
+                    <MudText Typo="Typo.h6">Scanned Plants</MudText>
+                    <MudSimpleTable Dense="true" Hover="true" Class="mt-2">
+                        <thead>
+                            <tr>
+                                <th>Scan #</th>
+                                <th>Quantity</th>
+                                <th>Species</th>
+                                <th>Latin Name</th>
+                                <th>Sowing Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var scan in scannedPlants)
+                            {
+                                <tr>
+                                    <td>@scan.ScanNumber</td>
+                                    <td>@scan.Quantity</td>
+                                    <td>@scan.SpeciesName</td>
+                                    <td>@scan.SpeciesLatin</td>
+                                    <td>@scan.SowingDate</td>
+                                    <td>@scan.Timestamp.ToString("HH:mm:ss")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </MudSimpleTable>
+                </MudCardContent>
+            </MudCard>
+        }
+
+        @if (totalScanned == parsedCode?.TotalQuantity)
+        {
+            <MudCard Class="mt-4" Style="background-color: var(--mud-palette-success-lighten);">
+                <MudCardContent>
+                    <MudText Typo="Typo.h5" Color="Color.Success">Target Reached!</MudText>
+                    <MudText>All @totalScanned plants have been scanned successfully.</MudText>
+                    
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="Icons.Material.Filled.Print" 
+                              OnClick="CompleteOrder" Class="mt-3">
+                        Complete Order & Print Label
+                    </MudButton>
+                </MudCardContent>
+            </MudCard>
+        }
+
+        <MudButton Variant="Variant.Text" Color="Color.Secondary" StartIcon="Icons.Material.Filled.ArrowBack" 
+                  OnClick="@(() => Navigation.NavigateTo("/manufacturing"))" Class="mt-4">
+            Back to Orders
+        </MudButton>
+    }
+</MudContainer>
+
+@code {
+    [Parameter] public string OrderKey { get; set; } = string.Empty;
+    
+    private ManufacturingOrder? order;
+    private ProductCode? parsedCode;
+    private List<ScannedPlant> scannedPlants = new();
+    private int totalScanned = 0;
+    private double progressPercentage => parsedCode?.TotalQuantity > 0 ? (totalScanned * 100.0 / parsedCode.TotalQuantity) : 0;
+    
+    private enum ScanStep { Quantity, Plant }
+    private ScanStep scanStep = ScanStep.Quantity;
+    
+    private string quantityInput = "";
+    private string plantQRInput = "";
+    private ScannedPlant? currentScan;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        Logger.LogInformation("OrderScanning page initialized for order: {OrderKey}", OrderKey);
+        await LoadOrder();
+    }
+    
+    private async Task LoadOrder()
+    {
+        try
+        {
+            // For now, load all orders and find the matching one
+            var orders = await OdooService.GetManufacturingOrdersAsync();
+            order = orders.FirstOrDefault(o => o.OrderKey == OrderKey);
+            
+            if (order != null)
+            {
+                parsedCode = ParseProductCode(order.ProductRef);
+                if (parsedCode == null)
+                {
+                    Snackbar.Add($"Unable to parse product code: {order.ProductRef}", Severity.Error);
+                }
+            }
+            else
+            {
+                Snackbar.Add($"Order {OrderKey} not found", Severity.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error loading order {OrderKey}", OrderKey);
+            Snackbar.Add($"Error loading order: {ex.Message}", Severity.Error);
+        }
+    }
+    
+    private ProductCode? ParseProductCode(string productCode)
+    {
+        return ProductCode.Parse(productCode);
+    }
+    
+    private void OnQuantityKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && !string.IsNullOrEmpty(quantityInput))
+        {
+            ValidateQuantity();
+        }
+    }
+    
+    private void ValidateQuantity()
+    {
+        if (int.TryParse(quantityInput, out int quantity) && quantity > 0)
+        {
+            var newTotal = totalScanned + quantity;
+            if (newTotal <= parsedCode?.TotalQuantity)
+            {
+                currentScan = new ScannedPlant
+                {
+                    ScanNumber = scannedPlants.Count + 1,
+                    Quantity = quantity,
+                    Timestamp = DateTime.Now
+                };
+                
+                scanStep = ScanStep.Plant;
+                Snackbar.Add($"Quantity {quantity} confirmed. Now scan the plant QR code.", Severity.Success);
+            }
+            else
+            {
+                Snackbar.Add($"Quantity exceeds target. Maximum allowed: {parsedCode?.TotalQuantity - totalScanned}", Severity.Error);
+            }
+        }
+        else
+        {
+            Snackbar.Add("Invalid quantity. Please enter a number.", Severity.Error);
+        }
+    }
+    
+    private async Task OnPlantKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && !string.IsNullOrEmpty(plantQRInput))
+        {
+            await ValidatePlantQR();
+        }
+    }
+    
+    private async Task ValidatePlantQR()
+    {
+        if (currentScan == null) return;
+        
+        var (isValid, sowingDate, speciesGuid) = PlantService.ParsePlantQRCode(plantQRInput);
+        if (isValid)
+        {
+            // Resolve species from GUID
+            var (name, latin, fullName) = await PlantService.GetPlantSpeciesAsync(speciesGuid, order?.CustomerLanguage ?? "EN");
+            
+            currentScan.SowingDate = sowingDate;
+            currentScan.SpeciesGuid = Guid.TryParse(speciesGuid, out var guid) ? guid : Guid.NewGuid();
+            currentScan.SpeciesName = name;
+            currentScan.SpeciesLatin = latin;
+            currentScan.SpeciesFullName = fullName;
+            
+            scannedPlants.Add(currentScan);
+            totalScanned += currentScan.Quantity;
+            
+            Logger.LogInformation("Added scan: {Quantity} x {Species} (Sowing: {SowingDate})", 
+                currentScan.Quantity, currentScan.SpeciesFullName, currentScan.SowingDate);
+            
+            Snackbar.Add($"SUCCESS: Added {currentScan.Quantity} x {currentScan.SpeciesFullName}", Severity.Success);
+            
+            // Reset for next scan
+            currentScan = null;
+            quantityInput = "";
+            plantQRInput = "";
+            scanStep = ScanStep.Quantity;
+            
+            if (totalScanned == parsedCode?.TotalQuantity)
+            {
+                Snackbar.Add("TARGET REACHED! All plants scanned.", Severity.Success);
+            }
+        }
+        else
+        {
+            Snackbar.Add($"Invalid QR code format: {plantQRInput}", Severity.Error);
+        }
+    }
+    
+    private async Task CompleteOrder()
+    {
+        try
+        {
+            Logger.LogInformation("Completing order {OrderKey}", OrderKey);
+            
+            // TODO: Send completion data to Odoo
+            var success = await OdooService.CompleteManufacturingOrderAsync(order!.Id, scannedPlants);
+            
+            if (success)
+            {
+                Snackbar.Add("Order completed successfully!", Severity.Success);
+                // TODO: Trigger label printing
+                
+                // Navigate back to manufacturing orders
+                Navigation.NavigateTo("/manufacturing");
+            }
+            else
+            {
+                Snackbar.Add("Failed to complete order in Odoo", Severity.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error completing order");
+            Snackbar.Add($"Error: {ex.Message}", Severity.Error);
+        }
+    }
+}

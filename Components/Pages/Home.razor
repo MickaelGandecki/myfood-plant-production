@@ -1,0 +1,89 @@
+﻿@page "/"
+
+<PageTitle>Plant Production System</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudText Typo="Typo.h3" GutterBottom="true">Plant Production System</MudText>
+    <MudText Typo="Typo.body1" Class="mb-4">
+        Welcome to the MyFood Plant Production Management System. 
+        Track plants from seeding to delivery with QR code integration and Odoo ERP connectivity.
+    </MudText>
+
+    <MudGrid>
+        <MudItem xs="12" sm="6" md="3">
+            <MudCard>
+                <MudCardContent>
+                    <div class="d-flex align-center">
+                        <MudIcon Icon="Icons.Material.Filled.LocalFlorist" Color="Color.Success" Style="margin-right: 16px" />
+                        <div>
+                            <MudText Typo="Typo.h6">Plants</MudText>
+                            <MudText Typo="Typo.body2">Manage plant database</MudText>
+                        </div>
+                    </div>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Variant="Variant.Text" Color="Color.Primary" Href="/plants">View Plants</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudCard>
+                <MudCardContent>
+                    <div class="d-flex align-center">
+                        <MudIcon Icon="Icons.Material.Filled.Eco" Color="Color.Primary" Style="margin-right: 16px" />
+                        <div>
+                            <MudText Typo="Typo.h6">Seeding</MudText>
+                            <MudText Typo="Typo.body2">Track seeding process</MudText>
+                        </div>
+                    </div>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Variant="Variant.Text" Color="Color.Primary" Href="/seeding">Manage Seeding</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudCard>
+                <MudCardContent>
+                    <div class="d-flex align-center">
+                        <MudIcon Icon="Icons.Material.Filled.Factory" Color="Color.Warning" Style="margin-right: 16px" />
+                        <div>
+                            <MudText Typo="Typo.h6">Manufacturing</MudText>
+                            <MudText Typo="Typo.body2">Odoo ERP integration</MudText>
+                        </div>
+                    </div>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Variant="Variant.Text" Color="Color.Primary" Href="/manufacturing">View Orders</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudCard>
+                <MudCardContent>
+                    <div class="d-flex align-center">
+                        <MudIcon Icon="Icons.Material.Filled.QrCodeScanner" Color="Color.Info" Style="margin-right: 16px" />
+                        <div>
+                            <MudText Typo="Typo.h6">QR Scanner</MudText>
+                            <MudText Typo="Typo.body2">Scan plant QR codes</MudText>
+                        </div>
+                    </div>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Variant="Variant.Text" Color="Color.Primary" Href="/qr-scanner">Open Scanner</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+
+    <MudDivider Class="my-6" />
+
+    <MudAlert Severity="Severity.Info" ContentAlignment="HorizontalAlignment.Center">
+        <MudText Typo="Typo.body2">
+            MudBlazor integration is working! The UI framework is properly loaded.
+        </MudText>
+    </MudAlert>
+</MudContainer>

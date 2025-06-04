@@ -1,0 +1,212 @@
+@page "/seeding"
+@using PlantApp.Models
+@using PlantApp.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject PlantService PlantService
+@inject QrCodeService QrCodeService
+@inject ExcelService ExcelService
+@inject ISnackbar Snackbar
+
+<PageTitle>Seeding Management</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
+    <MudText Typo="Typo.h4" GutterBottom="true">Seeding Management</MudText>
+    <MudText Typo="Typo.body1" Class="mb-4">
+        Track seeding process with QR code generation and Excel export.
+    </MudText>
+
+    <MudGrid>
+        <MudItem xs="12" md="6">
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Create Seeding Entry</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudStack>
+                        <MudTextField @ref="quantityField" @bind-Value="quantity" Label="Quantity" Variant="Variant.Outlined" 
+                                     T="int" InputType="InputType.Number" OnKeyDown="@OnQuantityKeyDown" />
+                        
+                        <MudSelect @ref="plantSelect" T="Plant" @bind-Value="selectedPlant" Label="Select Plant" Variant="Variant.Outlined" 
+                                  AnchorOrigin="Origin.BottomCenter" ToStringFunc="@(p => p?.GetName("EN"))">
+                            @foreach (var plant in plants)
+                            {
+                                <MudSelectItem Value="@plant">@plant.GetName("EN") (@plant.LatinName)</MudSelectItem>
+                            }
+                        </MudSelect>
+                        
+                        <MudDatePicker @bind-Date="seedingDate" Label="Seeding Date" Variant="Variant.Outlined" />
+                        
+                        <MudStack Row Justify="Justify.SpaceBetween">
+                            <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="Icons.Material.Filled.Add" 
+                                      OnClick="CreateSeedingEntry" Disabled="selectedPlant == null || quantity <= 0">
+                                Create Entry
+                            </MudButton>
+                            <MudButton Variant="Variant.Outlined" Color="Color.Info" StartIcon="Icons.Material.Filled.QrCode" 
+                                      OnClick="GenerateQrCode" Disabled="selectedPlant == null || quantity <= 0">
+                                Generate QR
+                            </MudButton>
+                        </MudStack>
+                    </MudStack>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            @if (!string.IsNullOrEmpty(qrCodeBase64))
+            {
+                <MudCard>
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Generated QR Code</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent Class="d-flex justify-center">
+                        <img src="data:image/png;base64,@qrCodeBase64" alt="QR Code" style="max-width: 200px;" />
+                    </MudCardContent>
+                </MudCard>
+            }
+        </MudItem>
+    </MudGrid>
+
+    <MudCard Class="mt-4">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">Seeding Entries</MudText>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                <MudButton Variant="Variant.Filled" Color="Color.Success" StartIcon="Icons.Material.Filled.Download" 
+                          OnClick="ExportToExcel" Disabled="!seedingEntries.Any()">
+                    Export to Excel
+                </MudButton>
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent>
+            @if (seedingEntries.Any())
+            {
+                <MudDataGrid T="SeedingEntry" Items="@seedingEntries" SortMode="SortMode.Multiple" 
+                           Filterable="true" Hover="true" Striped="true" Dense="true">
+                    <Columns>
+                        <PropertyColumn Property="x => x.GetShortId()" Title="ID" Sortable="false" />
+                        <PropertyColumn Property="x => x.PlantName" Title="Plant" />
+                        <PropertyColumn Property="x => x.Quantity" Title="Quantity" />
+                        <PropertyColumn Property="x => x.SeedingDate" Title="Seeding Date" Format="dd/MM/yyyy" />
+                        <PropertyColumn Property="x => x.CreatedAt" Title="Created" Format="dd/MM/yyyy HH:mm" />
+                        <TemplateColumn CellClass="d-flex justify-end">
+                            <CellTemplate>
+                                <MudStack Row>
+                                    <MudButton Variant="Variant.Text" Color="Color.Info" Size="Size.Small" 
+                                              StartIcon="Icons.Material.Filled.QrCode" OnClick="@(() => ShowQrCode(context.Item))">
+                                        QR Code
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Text" Color="Color.Error" Size="Size.Small" 
+                                              StartIcon="Icons.Material.Filled.Delete" OnClick="@(() => DeleteEntry(context.Item))">
+                                        Delete
+                                    </MudButton>
+                                </MudStack>
+                            </CellTemplate>
+                        </TemplateColumn>
+                    </Columns>
+                    <PagerContent>
+                        <MudDataGridPager T="SeedingEntry" />
+                    </PagerContent>
+                </MudDataGrid>
+            }
+            else
+            {
+                <MudAlert Severity="Severity.Info">
+                    <MudText>No seeding entries found. Create your first entry above.</MudText>
+                </MudAlert>
+            }
+        </MudCardContent>
+    </MudCard>
+</MudContainer>
+
+@code {
+    private List<Plant> plants = new();
+    private List<SeedingEntry> seedingEntries = new();
+    private Plant? selectedPlant;
+    private int quantity = 1;
+    private DateTime? seedingDate = DateTime.Today;
+    private string qrCodeBase64 = "";
+    private MudTextField<int>? quantityField;
+    private MudSelect<Plant>? plantSelect;
+
+    protected override async Task OnInitializedAsync()
+    {
+        plants = await PlantService.GetAllPlantsAsync();
+        // Load existing seeding entries from local storage or service
+    }
+
+    private void CreateSeedingEntry()
+    {
+        if (selectedPlant == null || quantity <= 0 || seedingDate == null) return;
+
+        var entry = new SeedingEntry
+        {
+            Id = Guid.NewGuid(),
+            PlantId = selectedPlant.Id,
+            PlantName = selectedPlant.GetName("EN"),
+            Quantity = quantity,
+            SowingDate = seedingDate.Value,
+            CreatedAt = DateTime.Now
+        };
+
+        seedingEntries.Add(entry);
+        Snackbar.Add($"Seeding entry created for {entry.PlantName}", Severity.Success);
+        
+        // Reset form
+        selectedPlant = null;
+        quantity = 1;
+        seedingDate = DateTime.Today;
+        qrCodeBase64 = "";
+    }
+
+    private void GenerateQrCode()
+    {
+        if (selectedPlant == null || quantity <= 0) return;
+
+        var qrData = $"PLANT:{selectedPlant.Id}|QTY:{quantity}|DATE:{seedingDate:yyyy-MM-dd}";
+        qrCodeBase64 = QrCodeService.GenerateQrCodeBase64(qrData);
+    }
+
+    private void ShowQrCode(SeedingEntry entry)
+    {
+        var qrData = entry.GetQrCodeData();
+        qrCodeBase64 = QrCodeService.GenerateQrCodeBase64(qrData);
+        Snackbar.Add("QR Code generated", Severity.Info);
+    }
+
+    private void DeleteEntry(SeedingEntry entry)
+    {
+        seedingEntries.Remove(entry);
+        Snackbar.Add($"Seeding entry deleted", Severity.Warning);
+    }
+
+    private async Task ExportToExcel()
+    {
+        try
+        {
+            var filePath = await ExcelService.ExportSeedingEntriesToExcelAsync(seedingEntries);
+            Snackbar.Add($"Excel file exported: {Path.GetFileName(filePath)}", Severity.Success);
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Export failed: {ex.Message}", Severity.Error);
+        }
+    }
+
+    private async Task OnQuantityKeyDown(KeyboardEventArgs args)
+    {
+        if (args.Key == "Enter" || args.Key == "Tab")
+        {
+            await Task.Delay(50); // Small delay to ensure the value is bound
+            if (plantSelect != null)
+            {
+                await plantSelect.FocusAsync();
+                await plantSelect.OpenMenu();
+            }
+        }
+    }
+}

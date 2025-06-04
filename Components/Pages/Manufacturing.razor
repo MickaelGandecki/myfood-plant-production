@@ -1,0 +1,209 @@
+@page "/manufacturing"
+@using PlantApp.Models
+@using PlantApp.Services
+@using MudBlazor
+@inject OdooService OdooService
+@inject ISnackbar Snackbar
+@inject ILogger<Manufacturing> Logger
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<PageTitle>Manufacturing Orders</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
+    <MudText Typo="Typo.h4" GutterBottom="true">Manufacturing Orders</MudText>
+    <MudText Typo="Typo.body1" Class="mb-4">
+        View and manage manufacturing orders from Odoo ERP system.
+    </MudText>
+
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">Odoo ERP Integration</MudText>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" 
+                          OnClick="TestButtonClick" Class="mr-2">
+                    Test Click
+                </MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="Icons.Material.Filled.Refresh" 
+                          OnClick="LoadManufacturingOrders" Disabled="loading">
+                    @if (loading)
+                    {
+                        <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
+                        <MudText Class="ms-2">Loading...</MudText>
+                    }
+                    else
+                    {
+                        <MudText>Refresh Orders</MudText>
+                    }
+                </MudButton>
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent>
+            @if (loading)
+            {
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="400px" />
+            }
+            else if (manufacturingOrders.Any())
+            {
+                <MudTable Items="@manufacturingOrders" Hover="true" Striped="true" Dense="true" OnRowClick="@OnRowClick" T="ManufacturingOrder">
+                    <HeaderContent>
+                        <MudTh>Order</MudTh>
+                        <MudTh>Product</MudTh>
+                        <MudTh>Qty</MudTh>
+                        <MudTh>State</MudTh>
+                        <MudTh>Customer</MudTh>
+                        <MudTh>Lang</MudTh>
+                        <MudTh>Actions</MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="Order">@context.order_key</MudTd>
+                        <MudTd DataLabel="Product">@context.product_ref</MudTd>
+                        <MudTd DataLabel="Qty">@context.product_qty</MudTd>
+                        <MudTd DataLabel="State">
+                            <MudChip T="string" Color="GetStateColor(context.state)" Size="Size.Small">
+                                @context.state
+                            </MudChip>
+                        </MudTd>
+                        <MudTd DataLabel="Customer">@context.partner_name</MudTd>
+                        <MudTd DataLabel="Lang">
+                            <MudChip T="string" Color="Color.Default" Size="Size.Small">
+                                @context.customer_language
+                            </MudChip>
+                        </MudTd>
+                        <MudTd DataLabel="Actions">
+                            <MudButton Variant="Variant.Filled" 
+                                      Color="Color.Primary" 
+                                      Size="Size.Small"
+                                      OnClick="@(() => HandleScanClick(context.order_key))"
+                                      Class="mr-2">
+                                Scan
+                            </MudButton>
+                            <MudButton Variant="Variant.Text" 
+                                      Color="Color.Info" 
+                                      Size="Size.Small"
+                                      OnClick="@(() => HandleDetailsClick(context.order_key))">
+                                Details
+                            </MudButton>
+                        </MudTd>
+                    </RowTemplate>
+                </MudTable>
+            }
+            else
+            {
+                <MudAlert Severity="Severity.Info">
+                    <MudText>No manufacturing orders found. Click "Refresh Orders" to load data from Odoo ERP.</MudText>
+                </MudAlert>
+            }
+        </MudCardContent>
+    </MudCard>
+</MudContainer>
+
+@code {
+    private List<ManufacturingOrder> manufacturingOrders = new();
+    private bool loading = false;
+
+    protected override void OnInitialized()
+    {
+        Logger.LogInformation("Manufacturing page initialized");
+        base.OnInitialized();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Logger.LogInformation("Manufacturing page OnInitializedAsync - loading data automatically");
+        await LoadManufacturingOrders();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadManufacturingOrders()
+    {
+        loading = true;
+        Logger.LogInformation("Starting to load manufacturing orders from Odoo");
+        
+        try
+        {
+            Logger.LogDebug("Calling OdooService.GetManufacturingOrdersAsync()");
+            manufacturingOrders = await OdooService.GetManufacturingOrdersAsync();
+            
+            Logger.LogInformation("Successfully loaded {Count} manufacturing orders", manufacturingOrders.Count);
+            
+            if (manufacturingOrders.Count == 0)
+            {
+                Logger.LogWarning("No manufacturing orders returned from Odoo service");
+                Snackbar.Add("No manufacturing orders found in Odoo", Severity.Warning);
+            }
+            else
+            {
+                // Only log success, don't show persistent snackbar
+                Logger.LogInformation("Successfully loaded {Count} manufacturing orders", manufacturingOrders.Count);
+                
+                // Log details of first few orders for debugging
+                foreach (var order in manufacturingOrders.Take(3))
+                {
+                    Logger.LogDebug("Loaded order: {OrderKey} - Product: {ProductId}, Quantity: {Quantity}, State: {State}", 
+                        order.OrderKey, order.ProductId, order.ProductQty, order.State);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error loading manufacturing orders from Odoo");
+            Snackbar.Add($"Error loading manufacturing orders: {ex.Message}", Severity.Error);
+            
+            // Log more details about the error
+            Logger.LogError("Exception type: {ExceptionType}", ex.GetType().Name);
+            Logger.LogError("Stack trace: {StackTrace}", ex.StackTrace);
+            
+            if (ex.InnerException != null)
+            {
+                Logger.LogError("Inner exception: {InnerException}", ex.InnerException.Message);
+            }
+        }
+        finally
+        {
+            loading = false;
+            Logger.LogDebug("Finished loading manufacturing orders, loading state set to false");
+        }
+    }
+
+    private Color GetStateColor(string state)
+    {
+        return state?.ToLower() switch
+        {
+            "draft" => Color.Default,
+            "confirmed" => Color.Warning,
+            "progress" => Color.Info,
+            "done" => Color.Success,
+            "cancel" => Color.Error,
+            _ => Color.Default
+        };
+    }
+
+    private void TestButtonClick()
+    {
+        Logger.LogInformation("Test button clicked!");
+        Snackbar.Add("Test button works!", Severity.Success);
+    }
+    
+    private void HandleScanClick(string orderKey)
+    {
+        Logger.LogInformation("Scan button clicked for order: {OrderKey}", orderKey);
+        Snackbar.Add($"Starting scan for {orderKey}...", Severity.Info);
+        Navigation.NavigateTo($"/manufacturing/{orderKey}/scan");
+    }
+    
+    private void HandleDetailsClick(string orderKey)
+    {
+        Logger.LogInformation("Details button clicked for order: {OrderKey}", orderKey);
+        Snackbar.Add($"Showing details for {orderKey}", Severity.Info);
+    }
+    
+    private void OnRowClick(TableRowClickEventArgs<ManufacturingOrder> args)
+    {
+        var order = args.Item;
+        Logger.LogInformation("Manufacturing order row clicked: {OrderKey}", order.OrderKey);
+        Snackbar.Add($"Clicked on order: {order.OrderKey} - {order.ProductRef}", Severity.Info);
+    }
+}
