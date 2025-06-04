@@ -1,4 +1,5 @@
 @page "/manufacturing/{OrderKey}/scan"
+@rendermode InteractiveServer
 @using PlantApp.Models
 @using PlantApp.Services
 @using Microsoft.AspNetCore.Components.Web
@@ -71,14 +72,13 @@
             <MudCard Class="mt-4">
                 <MudCardContent>
                     <MudText Typo="Typo.h6">Scan #@(scannedPlants.Count + 1)</MudText>
-                    
                     <MudGrid Class="mt-3">
                         <MudItem xs="12" md="6">
                             <MudCard Outlined="true">
                                 <MudCardContent>
                                     <MudText Typo="Typo.subtitle1" Color="Color.Primary">[Step 1/2] Scan Quantity QR Code</MudText>
-                                    <MudTextField @ref="quantityField" @bind-Value="quantityInput" Label="Quantity" Variant="Variant.Outlined" 
-                                                Immediate="true" OnKeyDown="OnQuantityKeyDown" Disabled="@(scanStep != ScanStep.Quantity)"
+                                    <MudTextField T="string" @ref="quantityField" @bind-Value="quantityInput" Label="Quantity" Variant="Variant.Outlined" 
+                                                Immediate="true" TextUpdateSuppression="false" Disabled="@(scanStep != ScanStep.Quantity)"
                                                 HelperText="Scan or enter the quantity (number only)" Class="mt-3" />
                                     @if (!string.IsNullOrEmpty(quantityInput) && scanStep == ScanStep.Quantity)
                                     {
@@ -96,9 +96,9 @@
                                     <MudText Typo="Typo.subtitle1" Color="@(scanStep == ScanStep.Plant ? Color.Primary : Color.Default)">
                                         [Step 2/2] Scan Plant QR Code
                                     </MudText>
-                                    <MudTextField @ref="plantField" @bind-Value="plantQRInput" Label="Plant QR Code" Variant="Variant.Outlined" 
-                                                Immediate="true" OnKeyDown="OnPlantKeyDown" Disabled="@(scanStep != ScanStep.Plant)"
-                                                HelperText="Format: YYYY-MM-DD_GUID or YY-MM-DD_ShortGUID" Class="mt-3" />
+                                    <MudTextField T="string" @ref="plantField" @bind-Value="plantQRInput" Label="Plant QR Code" Variant="Variant.Outlined" 
+                                                Immediate="true" TextUpdateSuppression="false" Disabled="@(scanStep != ScanStep.Plant)"
+                                                HelperText="Format: YY-MM-DD_ShortGUID (e.g. 25-03-14_6b326f7c)" Class="mt-3" />
                                     @if (!string.IsNullOrEmpty(plantQRInput) && scanStep == ScanStep.Plant)
                                     {
                                         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ValidatePlantQR" Class="mt-2">
@@ -205,6 +205,14 @@
         await LoadOrder();
     }
 
+    private async Task OnQuantityDebounceElapsed(string value)
+    {
+        if (!string.IsNullOrEmpty(value) && scanStep == ScanStep.Quantity)
+        {
+            await ValidateQuantity();
+        }
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (shouldFocusOnRender)
@@ -214,6 +222,7 @@
             await FocusQuantityField();
         }
     }
+
 
     private async Task FocusQuantityField()
     {
@@ -268,14 +277,14 @@
         return ProductCode.Parse(productCode);
     }
     
-    private async Task OnQuantityKeyDown(KeyboardEventArgs e)
+    private async Task OnPlantDebounceElapsed(string value)
     {
-        if (e.Key == "Enter" && !string.IsNullOrEmpty(quantityInput))
+        if (!string.IsNullOrEmpty(value) && scanStep == ScanStep.Plant)
         {
-            await ValidateQuantity();
+            await ValidatePlantQR();
         }
     }
-    
+
     private async Task ValidateQuantity()
     {
         if (int.TryParse(quantityInput, out int quantity) && quantity > 0)

@@ -1,0 +1,2405 @@
+[
+  {
+    "id": "db9755f6-03fc-425b-8ce7-5864253da7bb",
+    "name": {
+      "FR": "Ache des montagnes",
+      "EN": "Lovage",
+      "DE": "Liebstöckel",
+      "LT": "Levisticum officinale"
+    }
+  },
+  {
+    "id": "6b326f7c-9cff-4901-b239-df844000424e",
+    "name": {
+      "FR": "Aneth Thalia",
+      "EN": "Thalia Dill",
+      "DE": "Thalia Dill",
+      "LT": "Anethum graveolens"
+    }
+  },
+  {
+    "id": "9c5f2d06-6757-4eca-a339-8644d1c288ff",
+    "name": {
+      "FR": "Basilic Citron",
+      "EN": "Lemon Basil",
+      "DE": "Zitrone Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "1afbac97-28e3-4ab6-bb93-dd907ba25cf3",
+    "name": {
+      "FR": "Basilic Fin vert",
+      "EN": "Fine Green Basil",
+      "DE": "Feines Grünes Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "32ed8927-bacf-4171-890c-81cfad40209d",
+    "name": {
+      "FR": "Basilic Genovese",
+      "EN": "Genovese Basil",
+      "DE": "Genovese Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "71eae0df-3caf-4396-8d07-b5eba5b23d92",
+    "name": {
+      "FR": "Basilic Gustosa",
+      "EN": "Gustosa Basil",
+      "DE": "Gustosa Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "5acce4ea-c947-4b5f-9fc2-c3ec3cb34aed",
+    "name": {
+      "FR": "Basilic Loki",
+      "EN": "Loki Basil",
+      "DE": "Loki Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "bed8f43b-e238-4372-9130-78629a26670a",
+    "name": {
+      "FR": "Basilic Nufar",
+      "EN": "Nufar Basil",
+      "DE": "Nufar Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "d7fca122-3b24-4c60-8ebb-14a105b82f14",
+    "name": {
+      "FR": "Basilic Pourpre rubis",
+      "EN": "Ruby purple Basil",
+      "DE": "Rubinpurpur  Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "b8a927f1-3f75-4496-a41f-bfc626cdd855",
+    "name": {
+      "FR": "Basilic Thaï siam queen",
+      "EN": "Thaï siam queen Basil",
+      "DE": "Thaï siam queen Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "3e5ec1d8-1708-4a5a-9f3b-20b0e153ad54",
+    "name": {
+      "FR": "Bourrache  A fleurs bleues",
+      "EN": "Blue-flowered Borago",
+      "DE": "Blaublütiger Borretsch",
+      "LT": "Borago officinalis"
+    }
+  },
+  {
+    "id": "d7fb6a97-6905-4b4e-a627-c977810ea6e1",
+    "name": {
+      "FR": "Camomille   Officinale",
+      "EN": "Officinale Chamomile",
+      "DE": "Officinale Kamille",
+      "LT": "Anthemis nobilis"
+    }
+  },
+  {
+    "id": "edb6b1c4-d507-40fd-91e4-7cc257ff4ccf",
+    "name": {
+      "FR": "Capucine   Lucifer",
+      "EN": "Lucifer Nasturtium",
+      "DE": "Luzifer Kapuzinerkresse",
+      "LT": "Tropaeolum"
+    }
+  },
+  {
+    "id": "9e2f1e49-d56c-4472-8c81-28211ad3b01d",
+    "name": {
+      "FR": "Cerfeuil d'hiver Massa",
+      "EN": "Massa Winter chervil",
+      "DE": "Massa Winterkerbel",
+      "LT": "Anthriscus cerefolium L. Hoffm."
+    }
+  },
+  {
+    "id": "0433292f-c87d-478d-a3d8-148ed93eb191",
+    "name": {
+      "FR": "Ciboule de chine",
+      "EN": "Chinese spring onion",
+      "DE": "Chinesischer Schnittlauch",
+      "LT": "Allium fistulosum L."
+    }
+  },
+  {
+    "id": "b9ed6552-5525-4f1b-95f0-3e04c75de449",
+    "name": {
+      "FR": "Ciboulette Polyvert",
+      "EN": "Polyvert Chives",
+      "DE": "Polyvert Schnittlauch",
+      "LT": "Allium schoenoprasum L."
+    }
+  },
+  {
+    "id": "e92cdd73-d406-412a-878b-0d7881e15c7c",
+    "name": {
+      "FR": "Coriandre Atlas",
+      "EN": "Atlas Coriander",
+      "DE": "Atlas Koriander",
+      "LT": "Coriandrum sativum"
+    }
+  },
+  {
+    "id": "5c846c21-bc1e-4e01-ab49-c45ab3d95a06",
+    "name": {
+      "FR": "Fenugrec",
+      "EN": "Fenugreek",
+      "DE": "Bockshornklee",
+      "LT": "Trigonella foenum-graecum"
+    }
+  },
+  {
+    "id": "1f47cf9b-a29b-4da3-be5d-b76b5748f064",
+    "name": {
+      "FR": "Marjolaine vivace (origan)",
+      "EN": "Oregano",
+      "DE": "Oregano",
+      "LT": "Origanum majorana"
+    }
+  },
+  {
+    "id": "34853df3-b360-4cf1-a590-220bd2cacad7",
+    "name": {
+      "FR": "Mélisse Citronnelle",
+      "EN": "Lemon balm",
+      "DE": "Zitronenmelisse",
+      "LT": "Melissa officinalis"
+    }
+  },
+  {
+    "id": "c430ff0f-7478-4d88-ac58-0cfaea467bfb",
+    "name": {
+      "FR": "Menthe  Spicata",
+      "EN": "Spearmint",
+      "DE": "Grüne Minze",
+      "LT": "Mentha spicata"
+    }
+  },
+  {
+    "id": "38370bc0-48d2-4bea-b74c-4fd31ba0a541",
+    "name": {
+      "FR": "Persil frisé Mor",
+      "EN": "Mor Curly-leaved parsley",
+      "DE": "Mor Krause petersilie",
+      "LT": "Petroselinum crispum"
+    }
+  },
+  {
+    "id": "f2dfb795-9ea9-414a-a215-498185f6d0ac",
+    "name": {
+      "FR": "Persil frisé Vert foncé",
+      "EN": "Dark green Curly-leaved parsley",
+      "DE": "Dunkelgrüne Krause petersilie",
+      "LT": "Petroselinum crispum"
+    }
+  },
+  {
+    "id": "68445952-c2aa-4582-b385-8693f57c7bff",
+    "name": {
+      "FR": "Persil plat Laica",
+      "EN": "Laica Flat-leaved parsley",
+      "DE": "Laica Glatte petersilie",
+      "LT": "Petroselinum crispum"
+    }
+  },
+  {
+    "id": "264a1fe1-e5f7-4fc4-a94b-6ec9208fe6b1",
+    "name": {
+      "FR": "Pimprenelle",
+      "EN": "Salad burnet",
+      "DE": "Pimpinelle",
+      "LT": "Sanguisorba minor"
+    }
+  },
+  {
+    "id": "502f425c-ef40-45c7-94eb-f7ffba86d1ba",
+    "name": {
+      "FR": "Sauge Officinale",
+      "EN": "Officinale Sage",
+      "DE": "Officinale Salbei",
+      "LT": "Salvia officinalis"
+    }
+  },
+  {
+    "id": "6b36290f-c946-4a24-9f73-9149b6ef1faa",
+    "name": {
+      "FR": "Thym D'hiver",
+      "EN": "Winter thyme",
+      "DE": "Winterthymian",
+      "LT": "Thymus vulgaris"
+    }
+  },
+  {
+    "id": "e720c95d-2ea4-46f5-a3ea-4ecb090d23b9",
+    "name": {
+      "FR": "Verveine Officinale",
+      "EN": "Officinale Vervain",
+      "DE": "Officinale Eisenkraut",
+      "LT": "Verbena officinalis"
+    }
+  },
+  {
+    "id": "98a895be-2396-4264-9106-319ad9aec478",
+    "name": {
+      "FR": "Chicorée chioggia Botticelli",
+      "EN": "Botticelli Chicory Chioggia",
+      "DE": "Botticelli Zichorie Chioggia",
+      "LT": "Cichorrium intybus"
+    }
+  },
+  {
+    "id": "8cfdb791-0fa4-415c-ac5e-3467b3fd5761",
+    "name": {
+      "FR": "Chicorée chioggia Leonardo",
+      "EN": "Leonardo Chicory Chioggia",
+      "DE": "Leonardo Zichorie Chioggia",
+      "LT": "Cichorrium intybus"
+    }
+  },
+  {
+    "id": "b678e87b-9c6f-4d2f-a3ce-fd78bb480f1e",
+    "name": {
+      "FR": "Chicorée sauvage grumolo verde",
+      "EN": "Grumolo verde Wild Chicory",
+      "DE": "Grumolo verde wilde Zichorie",
+      "LT": "Cichorium endivia L."
+    }
+  },
+  {
+    "id": "9260475b-6602-4d2a-869b-0daac0583eee",
+    "name": {
+      "FR": "Chicorée scarole  Nuance",
+      "EN": "Nuance Escarole endive",
+      "DE": "Nuance Endivie",
+      "LT": "Cichorium endivia L."
+    }
+  },
+  {
+    "id": "2e80ca6b-6e53-459c-bbd2-238cb93a8043",
+    "name": {
+      "FR": "Cresson De fontaine",
+      "EN": "Watercress",
+      "DE": "Brunnenkresse",
+      "LT": "Nasturtiim officinalis"
+    }
+  },
+  {
+    "id": "43a5c662-324d-4fb5-ae1a-c1fcd7b3ece5",
+    "name": {
+      "FR": "Cresson De jardin",
+      "EN": "Land cress",
+      "DE": "Gartenkresse",
+      "LT": "Barbarea verna"
+    }
+  },
+  {
+    "id": "9553e8f6-dfe4-4e85-b34b-a914f8adede0",
+    "name": {
+      "FR": "Laitue batavia Celtic",
+      "EN": "Celtic Batavia lettuce",
+      "DE": "Celtic Bataviasalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "4d9cea41-7305-41b8-be6d-ce8f62b9b8f1",
+    "name": {
+      "FR": "Laitue batavia Minestrone",
+      "EN": "Minestrone Batavia lettuce",
+      "DE": "Minestrone Bataviasalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "0205c3ab-73c6-42f1-b946-a63e57518644",
+    "name": {
+      "FR": "Laitue batavia rouge Marinski",
+      "EN": "Marinski Red batavia lettuce",
+      "DE": "Marinski Roter Bataviasalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "c0d1e97e-f089-481e-bf45-445ff96aa302",
+    "name": {
+      "FR": "Laitue batavia verte Fripone",
+      "EN": "Fripone Green batavia lettuce",
+      "DE": "Fripone Grün bataviasalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "0dbea1bf-9b6f-4a10-8b27-c5b13faffb0d",
+    "name": {
+      "FR": "Laitue feuille de chêne Cerbiatta",
+      "EN": "Cerbiatta Oak leaf lettuce",
+      "DE": "Cerbiatta Eichblattsalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "a9d614a6-520d-47df-bbe2-afb5d676bbde",
+    "name": {
+      "FR": "Laitue feuille de chêne Parinice",
+      "EN": "Parinice Oak leaf lettuce",
+      "DE": "Parinice Eichblattsalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "fe802fe3-b478-408a-835c-34b8fd4bb549",
+    "name": {
+      "FR": "Laitue pommée Analotta",
+      "EN": "Analotta Head lettuce",
+      "DE": "Analotta Kopfsalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "b61efe9f-c7c0-4485-93c2-3df2b71d7eae",
+    "name": {
+      "FR": "Laitue romaine Jeluna",
+      "EN": "Jeluna Fresh lettuce",
+      "DE": "Jeluna Römersalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "9942e0fd-7861-4fe7-9392-b54efb0e118c",
+    "name": {
+      "FR": "Laitue romaine Xalbadora",
+      "EN": "Xalbadora Fresh lettuce",
+      "DE": "Xalbadora Römersalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "af9e7a92-eddb-436e-beb9-23b932190ae0",
+    "name": {
+      "FR": "Laitue rougette Catelaine",
+      "EN": "Catelaine Red lettuce",
+      "DE": "Catelaine Rötelsalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "717b5950-42b2-4a5e-8371-1eb0af79533a",
+    "name": {
+      "FR": "Laitue rougette Pigale",
+      "EN": "Pigale Red lettuce",
+      "DE": "Pigale Rötelsalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "1e00aa97-ba8a-487b-9926-0d3b9eff7d2c",
+    "name": {
+      "FR": "Laitue salanova rouge Barlach",
+      "EN": "Barlach Red salanova lettuce",
+      "DE": "Barlach Roter Salanova-Salat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "d4885c84-c291-477a-8d17-4d4d6b51ea7e",
+    "name": {
+      "FR": "Laitue salanova verte Hawking",
+      "EN": "Hawking Green salanova lettuce",
+      "DE": "Hawking Grün Salanova-Salat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "37c07dde-743b-4b41-864d-515bc38a6941",
+    "name": {
+      "FR": "Mâche Gala",
+      "EN": "Gala Corn salad",
+      "DE": "Gala Feldsalat",
+      "LT": "Valerianella locusta Laterr"
+    }
+  },
+  {
+    "id": "44978e14-f5f6-420a-ae63-dc07ce51dcd1",
+    "name": {
+      "FR": "Mâche Granon",
+      "EN": "Granon Corn salad",
+      "DE": "Granon Feldsalat",
+      "LT": "Valerianella locusta Laterr"
+    }
+  },
+  {
+    "id": "390f21f5-2566-40e2-b8a3-8a7c56213d25",
+    "name": {
+      "FR": "Mâche Vit",
+      "EN": "Vit Corn salad",
+      "DE": "Vit Feldsalat",
+      "LT": "Valerianella locusta Laterr"
+    }
+  },
+  {
+    "id": "29931aef-54ab-445c-9496-3590face4c98",
+    "name": {
+      "FR": "Mâche  Frost",
+      "EN": "Frost Corn salad",
+      "DE": "Frost Feldsalat",
+      "LT": "Valerianella locusta Laterr"
+    }
+  },
+  {
+    "id": "57ac27bc-3492-4497-bef6-f4e62acd6ad8",
+    "name": {
+      "FR": "Mesclun Côte d'azur",
+      "EN": "Côte d'azur Mesclun",
+      "DE": "Côte d'azur Mesclun",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "3306b14f-40e7-4d4f-a0a5-9f5618c48fb8",
+    "name": {
+      "FR": "Mesclun Misticanza",
+      "EN": "Misticanza Mesclun",
+      "DE": "Misticanza Mesclun",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "e2ae9b4e-7200-4a43-84a1-fd0e9e9233bb",
+    "name": {
+      "FR": "Roquette Sauvage",
+      "EN": "Wild Arugula",
+      "DE": "Wilder Rucola",
+      "LT": "Diplotaxis tenuifolia"
+    }
+  },
+  {
+    "id": "9eb96f46-dd59-4498-a9e1-d86f017af8eb",
+    "name": {
+      "FR": "Arroche rouge Magnum",
+      "EN": "Magnum Orach",
+      "DE": "Magnum Gartenmelde",
+      "LT": "Atriplex hortensis"
+    }
+  },
+  {
+    "id": "991ca38d-b9f8-4a60-b8a8-b3745f977f8a",
+    "name": {
+      "FR": "Artichaut Impérial Star",
+      "EN": "Imperial Star Artichoke",
+      "DE": "Imperial Star Artischocken",
+      "LT": "Cynara cardunculus L."
+    }
+  },
+  {
+    "id": "05b69648-a940-4b59-acc4-558451ea5faf",
+    "name": {
+      "FR": "Betterave Bull's blood",
+      "EN": "Bull's blood Red beet",
+      "DE": "Bull's blood Rote rüben",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "2bca8013-4d60-4d21-8e30-1868b90c561b",
+    "name": {
+      "FR": "Céleri à couper Afina",
+      "EN": "Afina Leaf celery",
+      "DE": "Afina Schnittsellerie",
+      "LT": "Apium graveolens L."
+    }
+  },
+  {
+    "id": "ad801093-4772-477e-913a-02af2a1759a4",
+    "name": {
+      "FR": "Céleri branche   Tango",
+      "EN": "Tango Celery",
+      "DE": "Tango Stangen-bleichseillerie",
+      "LT": "Apium graveolens L."
+    }
+  },
+  {
+    "id": "535738a6-1487-4473-a607-43c48ca02cec",
+    "name": {
+      "FR": "Chou brocoli  Camélia",
+      "EN": "Camélia Broccoli",
+      "DE": "Camélia Brokkoli",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "12ff9bbf-581b-4967-9888-4ed7251940f0",
+    "name": {
+      "FR": "Chou brocoli  Covina",
+      "EN": "Covina Broccoli",
+      "DE": "Covina Brokkoli",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "7ef30c74-03ee-4879-ba9c-9a99b811bdab",
+    "name": {
+      "FR": "Chou cabus pointu Caraflex",
+      "EN": "Caraflex Pointed cabbage",
+      "DE": "Caraflex Spitzkohl",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "66a9c199-696b-4bec-9884-6fb478e5a4b9",
+    "name": {
+      "FR": "Chou cabus pointu Kalibos",
+      "EN": "Kalibos Red pointed cabbage",
+      "DE": "Kalibos Roter Spitzkohl",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "23b271e6-466d-48f7-9e7c-232e14ae4ed6",
+    "name": {
+      "FR": "Chou chinois Joi choi",
+      "EN": "Joi choi Chinese cabbage",
+      "DE": "Joi choi Chinakohl",
+      "LT": "Brassica rapa L."
+    }
+  },
+  {
+    "id": "74120114-11ed-4460-b62b-bb4bdc0e25fe",
+    "name": {
+      "FR": "Chou chinois Mizuna kyoto",
+      "EN": "Mizuna kyoto Chinese cabbage",
+      "DE": "Mizuna kyoto Chinakohl",
+      "LT": "Brassica rapa L."
+    }
+  },
+  {
+    "id": "881dcd99-7dac-4dd7-b4fe-6cc45f448dd1",
+    "name": {
+      "FR": "Chou chinois Tah tsai",
+      "EN": "Tah tsai Chinese cabbage",
+      "DE": "Tah tsai Chinakohl",
+      "LT": "Brassica rapa L."
+    }
+  },
+  {
+    "id": "ee593e1f-9951-404e-9a92-a7db8f58e850",
+    "name": {
+      "FR": "Chou de milan Cantasa",
+      "EN": "Cantasa Savoy cabbage",
+      "DE": "Cantasa Wirsingkohl",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "0f85711a-c7d8-40a6-98b7-82cfa379134e",
+    "name": {
+      "FR": "Chou fleur Susanna",
+      "EN": null,
+      "DE": "Blumenkohl",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "aa5a8179-a194-4438-8a52-4f6c8802c875",
+    "name": {
+      "FR": "Chou fleur Verde Di Macerata",
+      "EN": "Verde Di Macerata Cauliflower",
+      "DE": "Verde Di Macerata Blumenkohl",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "821c8ff3-946c-4cad-a808-061fd183e91f",
+    "name": {
+      "FR": "Chou Kale Palmier Nero Di Toscana",
+      "EN": "Nero Di Toscana Kale",
+      "DE": "Nero Di Toscana Grünkohl",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "248c4654-109e-4d9e-8f5e-36a319b2fae6",
+    "name": {
+      "FR": "Chou non pommé Palmier",
+      "EN": "Palm tree Cabbage saw palmetto",
+      "DE": "Palme Ungeköpfter Kohl",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "717523ae-1d7d-4f44-85eb-cae92779a4a7",
+    "name": {
+      "FR": "Chou rave Korist",
+      "EN": "Korist Kohlrabi",
+      "DE": "Korist Kohlrabi",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "77db47a8-ea23-4afc-baf5-eca7246a5603",
+    "name": {
+      "FR": "Chou rouge non pommé Redbor",
+      "EN": null,
+      "DE": "Rotkohl ohne Kopf Redbor",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "66a81c69-26db-499d-ac65-90840c84be9e",
+    "name": {
+      "FR": "Epinard Bandera",
+      "EN": "Bandera Spinach",
+      "DE": "Bandera Spinat",
+      "LT": "Spinacia oleracea L."
+    }
+  },
+  {
+    "id": "66df10b0-2116-4289-9e95-150aec736e37",
+    "name": {
+      "FR": "Epinard Géant d'Hiver",
+      "EN": "Winter Giant Spinach",
+      "DE": "Winterriese Spinat",
+      "LT": "Spinacia oleracea L."
+    }
+  },
+  {
+    "id": "9ce90783-a0eb-4e4d-92b3-0648363dd767",
+    "name": {
+      "FR": "Epinard Matador",
+      "EN": "Matador Spinach",
+      "DE": "Matador Spinat",
+      "LT": "Spinacia oleracea L."
+    }
+  },
+  {
+    "id": "18fdb4ae-ec12-4198-a36d-18982626761a",
+    "name": {
+      "FR": "Epinard Monterey",
+      "EN": "Monterey Spinach",
+      "DE": "Monterey Spinat",
+      "LT": "Spinacia oleracea L."
+    }
+  },
+  {
+    "id": "2d3bf217-13f3-4b80-b98b-e43c6a675920",
+    "name": {
+      "FR": "Epinard Névada",
+      "EN": "Névada Spinach",
+      "DE": "Névada Spinat",
+      "LT": "Spinacia oleracea L."
+    }
+  },
+  {
+    "id": "15ae7b34-542a-47df-ba26-ccf051f41f3c",
+    "name": {
+      "FR": "Epinard Woodpecker",
+      "EN": "Woodpecker Spinach",
+      "DE": "Woodpecker Spinat",
+      "LT": "Spinacia oleracea L."
+    }
+  },
+  {
+    "id": "30efda65-63b1-4db5-8480-345c4da6a9a7",
+    "name": {
+      "FR": "Fenouil Orion",
+      "EN": "Orion Fennel",
+      "DE": "Orion Knollen Fenchel",
+      "LT": "Foeniculum vulgare Mill."
+    }
+  },
+  {
+    "id": "c79cd909-4320-4921-b2e7-a8548eb18652",
+    "name": {
+      "FR": "Fenouil Preludio",
+      "EN": "Preludio Fennel",
+      "DE": "Preludio Knollen Fenchel",
+      "LT": "Foeniculum vulgare Mill."
+    }
+  },
+  {
+    "id": "b1c6f425-ff71-49d0-89ef-2d0a0be364c9",
+    "name": {
+      "FR": "Fenouil Rondo",
+      "EN": "Rondo Fennel",
+      "DE": "Rondo Knollen Fenchel",
+      "LT": "Foeniculum vulgare Mill."
+    }
+  },
+  {
+    "id": "d8b9daaf-94fd-4381-8d73-5a85a2081f32",
+    "name": {
+      "FR": "Fève Aguadulce",
+      "EN": "Aguadulce Broad bean",
+      "DE": "Aguadulce Dicke Bohne",
+      "LT": "Faba vulgaris"
+    }
+  },
+  {
+    "id": "c605fe0d-28f8-4944-8415-5fa82d7fcd38",
+    "name": {
+      "FR": "Fève Major bio",
+      "EN": "Major bio Broad bean",
+      "DE": "Major bio Dicke Bohne",
+      "LT": "Faba vulgaris"
+    }
+  },
+  {
+    "id": "5a352441-77d5-4441-9e00-1489e01eaef4",
+    "name": {
+      "FR": "Haricot  Purple Queen",
+      "EN": "Purple Queen Dwarf french bean",
+      "DE": "Purple Queen Buschbohne",
+      "LT": "Phaseolus vulgaris L."
+    }
+  },
+  {
+    "id": "4ff7d92e-bbcd-4e81-9fe5-439b1d117a66",
+    "name": {
+      "FR": "Haricot nain Soliman",
+      "EN": "Soliman Dwarf french bean",
+      "DE": "Soliman Buschbohne",
+      "LT": "Phaseolus vulgaris L."
+    }
+  },
+  {
+    "id": "9b4ce57d-f4c0-4e74-904e-84d3095a513d",
+    "name": {
+      "FR": "Moutarde de chine Red giant",
+      "EN": "Red giant Chinese mustard",
+      "DE": "Red giant Chinesischer Senf",
+      "LT": "Brassica juncea"
+    }
+  },
+  {
+    "id": "44af25ac-aadc-44ab-8166-cdfb530f2b64",
+    "name": {
+      "FR": "Oignon blanc De lisbonne",
+      "EN": "of Lisbon White onion",
+      "DE": "von Lissabon Weiße Zwiebel",
+      "LT": "Allium cepa L."
+    }
+  },
+  {
+    "id": "de8cf52d-8c70-4c0f-8419-286743d12d7d",
+    "name": {
+      "FR": "Oignon blanc Parade",
+      "EN": "Parade Bunching onion",
+      "DE": "Parade Lauchzwiebeln",
+      "LT": "Allium cepa L."
+    }
+  },
+  {
+    "id": "849be423-5d41-4054-916d-593b3b99be3d",
+    "name": {
+      "FR": "Oignon rouge Lunga rossa di firenze",
+      "EN": "Lunga rossa di firenze Red onion",
+      "DE": "Lunga rossa di firenze Rote Zwiebeln",
+      "LT": "Allium cepa L."
+    }
+  },
+  {
+    "id": "1577a387-46a8-4221-b78a-f8340c52054e",
+    "name": {
+      "FR": "Oseille  De belleville",
+      "EN": "De belleville Sorrel",
+      "DE": "De belleville Sauerampfer",
+      "LT": "Rumex acetosa"
+    }
+  },
+  {
+    "id": "f4815205-cf67-4714-b1b3-3fec65514df4",
+    "name": {
+      "FR": "Oseille sanguine",
+      "EN": "Sorrel Scarlet",
+      "DE": "Sauerampfer Scarlet",
+      "LT": "Rumex sanguineus"
+    }
+  },
+  {
+    "id": "404edf39-5561-4103-82b5-357607fcf79c",
+    "name": {
+      "FR": "Petit pois nain",
+      "EN": "Dwarf pea",
+      "DE": "Zwergerbse",
+      "LT": "Pisum sativum"
+    }
+  },
+  {
+    "id": "4a56c563-7d10-4ba2-9d83-2b01cce63a2c",
+    "name": {
+      "FR": "Poirée Bright lights",
+      "EN": "Bright lights Swiss chard",
+      "DE": "Bright lights Mangold",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "b3c0c88d-28fe-4aee-8d8f-e3b464ca5aba",
+    "name": {
+      "FR": "Poirée Rhubarb chard rubis",
+      "EN": "Rhubarb chard ruby Swiss chard",
+      "DE": "Rhubarb chard rubin Mangold",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "4cbfaba1-b558-4cc9-899c-a52b2bb397e9",
+    "name": {
+      "FR": "Poirée Verte à couper",
+      "EN": "Green to cut Swiss chard",
+      "DE": "Grün zum Schneiden Mangold",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "93cc991c-11fa-4616-b1b4-4f45eb204039",
+    "name": {
+      "FR": "Pois croquant Sugar ann",
+      "EN": "Sugar ann Crunchy peas",
+      "DE": "Sugar ann Knackige erbsen",
+      "LT": "Pisum sativum"
+    }
+  },
+  {
+    "id": "725d24e3-66ac-4f77-9891-80be01f53c92",
+    "name": {
+      "FR": "Pois nain a écosser Jumbo",
+      "EN": "Jumbo Pea",
+      "DE": "Jumbo Markerbse",
+      "LT": "Pisum sativum"
+    }
+  },
+  {
+    "id": "1e5d113b-2be9-4c32-bf9c-970b21750588",
+    "name": {
+      "FR": "Pois nain Mangetout Norli",
+      "EN": "Norli Sugar Pea",
+      "DE": "Norli Zuckererbse",
+      "LT": "Pisum sativum"
+    }
+  },
+  {
+    "id": "38934446-1dd0-45a7-bd9a-76eac8f6b4b2",
+    "name": {
+      "FR": "Pourpier d'hiver Claytone Cuba",
+      "EN": "Claytone Cuba Purslane",
+      "DE": "Claytone Cuba Portulak",
+      "LT": "Claytonia perfoliata"
+    }
+  },
+  {
+    "id": "880e0e8c-cc0c-472d-bdd5-d7a1475e2af0",
+    "name": {
+      "FR": "Pourpier doré Golden",
+      "EN": "Golden Purslane",
+      "DE": "Golden Portulak",
+      "LT": "Portulaca oleracea"
+    }
+  },
+  {
+    "id": "e90ca624-af0e-47bc-97b9-efc401dedd50",
+    "name": {
+      "FR": "Radis Noir d'hiver",
+      "EN": "Winter black Black Radish",
+      "DE": "Schwarzer Winterrettich",
+      "LT": "Raphanus sativus"
+    }
+  },
+  {
+    "id": "10b1da3d-145d-43af-ae6e-6f26c93830b1",
+    "name": {
+      "FR": "Aubergine Amalia",
+      "EN": "Amalia Eggplant",
+      "DE": "Amalia Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "90f50efa-f3d3-4853-bfee-3e694b757c4c",
+    "name": {
+      "FR": "Aubergine Baluroi",
+      "EN": "Baluroi Eggplant",
+      "DE": "Baluroi Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "3a354866-299f-44eb-af92-b95a86461746",
+    "name": {
+      "FR": "Aubergine Black beauty",
+      "EN": "Black beauty Eggplant",
+      "DE": "Black beauty Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "6ffddeb1-a804-4fa8-885f-5048c14f0816",
+    "name": {
+      "FR": "Aubergine Bonica",
+      "EN": "Bonica Eggplant",
+      "DE": "Bonica Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "accfd74f-a00d-435d-8589-8d30774b697d",
+    "name": {
+      "FR": "Aubergine Gioletta",
+      "EN": null,
+      "DE": "Gioletta Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "1d244292-dfb1-4200-bba8-298e40b80e21",
+    "name": {
+      "FR": "Aubergine Jackpot",
+      "EN": "Jackpot Eggplant",
+      "DE": "Jackpot Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "f9c9c48e-b6de-443c-a511-4275502b6d9d",
+    "name": {
+      "FR": "Aubergine Lucilla",
+      "EN": "Lucilla Eggplant",
+      "DE": "Lucilla Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "3f416c09-6395-4ac2-9964-4bb78bff8848",
+    "name": {
+      "FR": "Aubergine Nerea",
+      "EN": "Nerea Eggplant",
+      "DE": "Nerea Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "9ec5f16d-93ad-4ed3-b504-c8ab3a333322",
+    "name": {
+      "FR": "Aubergine Shakira",
+      "EN": "Shakira Eggplant",
+      "DE": "Shakira Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "9d6a5d03-04b5-4634-ad43-78c054e6aff0",
+    "name": {
+      "FR": "Aubergine  Black Pearl",
+      "EN": "Black Pearl Eggplant",
+      "DE": "Black Pearl Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "379423b3-7a0c-4a69-b21d-76edd82334a5",
+    "name": {
+      "FR": "Concombre Flamingo",
+      "EN": "Flamingo Cucumber",
+      "DE": "Flamingo Gurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "8ea77b9c-7215-4b21-9ee4-e652fcf4859a",
+    "name": {
+      "FR": "Concombre Katrina",
+      "EN": "Katrina Cucumber",
+      "DE": "Katrina Gurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "9f6c9de2-0ff6-4755-8e8c-b2fe247afe5c",
+    "name": {
+      "FR": "Concombre Khassib",
+      "EN": "Khassib Cucumber",
+      "DE": "Khassib Gurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "9cb1d79d-393c-446f-8425-7a8ca5a4647f",
+    "name": {
+      "FR": "Concombre Paladium",
+      "EN": "Paladium Cucumber",
+      "DE": "Paladium  Gurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "50e6db05-bcdc-4f68-978a-af8c3dc46b15",
+    "name": {
+      "FR": "Concombre Ofelie",
+      "EN": "Ofelie Cucumber",
+      "DE": "Ofelie Gurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "bdb05676-4b91-4d4b-a91a-9420e0db7e59",
+    "name": {
+      "FR": "Concombre Picolino",
+      "EN": "Picolino Cucumber",
+      "DE": "Picolino Gurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "d080ef7e-6576-4f62-8b57-bad6c8086d43",
+    "name": {
+      "FR": "Cornichon Amour",
+      "EN": "Love Pickling cucumber",
+      "DE": "Liebe Einlegegurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "e8a46b67-1fa2-43f0-8736-72818aaa2f32",
+    "name": {
+      "FR": "Cornichon Conny",
+      "EN": "Conny Pickling cucumber",
+      "DE": "Conny Einlegegurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "cdf4a452-0014-46e2-8e98-73c361f9de94",
+    "name": {
+      "FR": "Cornichon Profi",
+      "EN": null,
+      "DE": "Profi Einlegegurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "2e297786-c7d8-4abe-a9ef-9b09021a74f0",
+    "name": {
+      "FR": "Cornichon Diamant",
+      "EN": "Diamond Pickling cucumber",
+      "DE": "Diamant Einlegegurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "9751a82d-f0a0-4282-ae66-6a48919a4e9e",
+    "name": {
+      "FR": "Courgette Caravaggio",
+      "EN": "Caravaggio Courgette",
+      "DE": "Caravaggio Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "6285738b-da6f-430f-8f20-abf8924e026c",
+    "name": {
+      "FR": "Courgette De nice",
+      "EN": "De Nice Courgette",
+      "DE": "aus Nizza Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "e98a4b2a-bbc4-4e4b-8cc0-83622f8c3701",
+    "name": {
+      "FR": "Courgette Dunja",
+      "EN": "Dunja Courgette",
+      "DE": "Dunja Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "1e2b9a49-fc4b-4ef6-9b5c-897cd84eb1cd",
+    "name": {
+      "FR": "Courgette Easypick",
+      "EN": "Easypick Squash",
+      "DE": "Easypick Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "bb0536ae-bde6-4510-9f55-ab10aafb70f4",
+    "name": {
+      "FR": "Courgette Geode",
+      "EN": "Geode Courgette",
+      "DE": "Geode Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "fcba348e-1175-4227-9d17-9a103f41d46b",
+    "name": {
+      "FR": "Courgette Marzio",
+      "EN": "Marzio Courgette",
+      "DE": "Marzio Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "3039645a-e223-4fb0-ad0a-c0ac29eafcb0",
+    "name": {
+      "FR": "Courgette Yellowfin",
+      "EN": "Yellowfin Courgette",
+      "DE": "Yellowfin Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "c642a743-5bed-4c5e-8045-13c1d9f3d23e",
+    "name": {
+      "FR": "Courgette  Eight Ball",
+      "EN": "Eight Ball Courgette",
+      "DE": "Eight Ball Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "b093dcef-c0d1-48d4-a0f0-f0ebc1e15002",
+    "name": {
+      "FR": "Melon Artemis",
+      "EN": "Artemis Melon",
+      "DE": "Artemis Melonen",
+      "LT": "Cucumis melo L."
+    }
+  },
+  {
+    "id": "4473bd44-c438-42d3-b356-895045af7253",
+    "name": {
+      "FR": "Melon Jenga",
+      "EN": "Jenga Melon",
+      "DE": "Jenga Melonen",
+      "LT": "Cucumis melo L."
+    }
+  },
+  {
+    "id": "4aa9329e-ff12-4769-8235-5c0d2a5ebb4f",
+    "name": {
+      "FR": "Pastèque Mini-Love",
+      "EN": "Mini-Love Watermelon",
+      "DE": "Mini-Love Wassermelone",
+      "LT": "Citrullus lanatus"
+    }
+  },
+  {
+    "id": "27ad722a-a846-4ef7-8c49-99179f3fb530",
+    "name": {
+      "FR": "Pastèque Nikas",
+      "EN": "Nikas Watermelon",
+      "DE": "Nikas Wassermelone",
+      "LT": "Citrullus lanatus"
+    }
+  },
+  {
+    "id": "4ffced36-064f-4ce1-9d92-61f24dd4c5e7",
+    "name": {
+      "FR": "Pastèque Pepita",
+      "EN": "Pepita Watermelon",
+      "DE": "Pepita Wassermelone",
+      "LT": "Citrullus lanatus"
+    }
+  },
+  {
+    "id": "58d02461-23fd-43ed-9f77-1475a2506a1a",
+    "name": {
+      "FR": "Poivron Elsa",
+      "EN": "Elsa Sweet pepper",
+      "DE": "Elsa Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "11d7126f-80ce-4cc7-bc68-c1970c35ec80",
+    "name": {
+      "FR": "Poivron Flynn",
+      "EN": "Flynn Sweet pepper",
+      "DE": "Flynn Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "e865b357-bc56-4360-9ae2-e41417d7f342",
+    "name": {
+      "FR": "Poivron Kromo",
+      "EN": "Kromo Sweet pepper",
+      "DE": "Kromo Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "433065f7-542f-487d-9121-cbda7d976d4b",
+    "name": {
+      "FR": "Poivron Maestral",
+      "EN": "Maestral Sweet pepper",
+      "DE": "Maestral Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "f93b6eaa-5631-49c4-be52-8a8d9587b33a",
+    "name": {
+      "FR": "Poivron Oreny",
+      "EN": null,
+      "DE": "Oreny Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "527e129a-a409-4865-9d6e-ed9a84f23126",
+    "name": {
+      "FR": "Poivron Poxigo",
+      "EN": null,
+      "DE": null,
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "2a6329ed-2c84-4a7c-8f80-3091ad398560",
+    "name": {
+      "FR": "Poivron Samson",
+      "EN": "Samson Sweet pepper",
+      "DE": "Samson Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "9500e9af-277a-4aca-9cea-30b2bf9902bb",
+    "name": {
+      "FR": "Poivron Sprinter",
+      "EN": null,
+      "DE": null,
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "b5247902-3313-4ca0-997f-85c7d319e30a",
+    "name": {
+      "FR": "Poivron Yolo wonder",
+      "EN": "Yolo wonder Sweet pepper",
+      "DE": "Yolo wonder Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "5c8323fa-dc49-4203-8a4f-3092a6238072",
+    "name": {
+      "FR": "Tomate Amapola",
+      "EN": "Amapola Tomato",
+      "DE": "Amapola Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "e8916f52-9e7a-4477-8214-5a269ac805fd",
+    "name": {
+      "FR": "Tomate Ananas",
+      "EN": null,
+      "DE": "Ananas Tomate",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "a410b6bf-b3cd-47bf-b0ef-10c88e0a0f71",
+    "name": {
+      "FR": "Tomate Andine cornue",
+      "EN": "Andean horned Tomato",
+      "DE": "Gehörnte Andine Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "555c71d6-ef67-456a-a835-a2fb2542b699",
+    "name": {
+      "FR": "Tomate Black cherry",
+      "EN": null,
+      "DE": "Black Cherry Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "097c6a09-c44b-4d9d-ade5-20f5ea2c51d1",
+    "name": {
+      "FR": "Tomate Borsalina",
+      "EN": "Borsalina Tomato",
+      "DE": "Borsalina Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "ac5585b3-60f6-4045-b2b1-5fadf1b19a8f",
+    "name": {
+      "FR": "Tomate Cardinal",
+      "EN": null,
+      "DE": "Cartinal Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "f0bf3c93-1eff-4dd7-9a36-012ddd240eee",
+    "name": {
+      "FR": "Tomate Country taste",
+      "EN": "Country taste Tomato",
+      "DE": "Country taste Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "25f1942c-c3eb-49ee-a2d9-eba6961b8478",
+    "name": {
+      "FR": "Tomate Cuor Di Bue",
+      "EN": null,
+      "DE": "Cuor Di Bue Tomate",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "bc0bbc5a-0bd6-46ff-bc63-c4421e8a46ce",
+    "name": {
+      "FR": "Tomate Defiant",
+      "EN": "Defiant Tomato",
+      "DE": "Defiant Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "d58b23b1-1d85-41a1-972f-7c3da3d61f43",
+    "name": {
+      "FR": "Tomate Dolly",
+      "EN": null,
+      "DE": "Dolly Tomate",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "5b5758fb-8bdd-405f-8abb-b256e8a99ce2",
+    "name": {
+      "FR": "Tomate Galadiant",
+      "EN": null,
+      "DE": "Galadiant Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "3b4f748b-026d-4960-8bcc-d74bd770339e",
+    "name": {
+      "FR": "Tomate Gardener's Delight",
+      "EN": null,
+      "DE": "Gardener's Delight Tomate",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "8246fec5-6be4-46d5-81c6-50074a4659c1",
+    "name": {
+      "FR": "Tomate Golotyna",
+      "EN": "Golotyna Tomato",
+      "DE": "Golotyna Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "c5dbfd8b-8507-4557-8466-f94408ac906e",
+    "name": {
+      "FR": "Tomate Gordon",
+      "EN": null,
+      "DE": "Gordon Tomate",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "666dfdfa-7d29-4111-87de-b0c0f843b7d4",
+    "name": {
+      "FR": "Tomate Grandimat",
+      "EN": "Grandimat Tomato",
+      "DE": "Grandimat Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "5d8f9942-0646-4596-9fad-7c4ecfd82aa9",
+    "name": {
+      "FR": "Tomate Green Zebra",
+      "EN": "Green zebra Tomato",
+      "DE": "Green zebra Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "695b2fbf-1c00-47ca-b0db-903bccbda206",
+    "name": {
+      "FR": "Tomate Jouvence",
+      "EN": null,
+      "DE": "Jouvence Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "4f1ebf84-1399-4d8d-b46e-d1148b7fc715",
+    "name": {
+      "FR": "Tomate Leeloo",
+      "EN": null,
+      "DE": "Leeloo Tomate",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "4b2d826a-617e-4da5-b637-1a09d5b87213",
+    "name": {
+      "FR": "Tomate Marmolada",
+      "EN": "Marmolada Tomato",
+      "DE": "Marmolada Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "415c5bca-4231-4ad9-93ee-14fe8b743c29",
+    "name": {
+      "FR": "Tomate Noire russe",
+      "EN": null,
+      "DE": "Russische schwarze Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "56ef4bb4-bf7d-4c19-9363-7a42b5bbb926",
+    "name": {
+      "FR": "Tomate Purple calabash",
+      "EN": "Purple calabash Tomato",
+      "DE": "Purple calabash Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "fd650dfb-b8ab-4bf4-a0b6-9d1e5ecca8a6",
+    "name": {
+      "FR": "Tomate Prévia",
+      "EN": null,
+      "DE": "PreviaTomate",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "1f131f57-ef53-463c-bcec-2928ef98a13c",
+    "name": {
+      "FR": "Tomate Roma",
+      "EN": null,
+      "DE": "Roma Tomate",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "9928172e-075d-4865-b09e-e084411060c2",
+    "name": {
+      "FR": "Tomate Sakura",
+      "EN": "Sakura Tomato",
+      "DE": "Sakura Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "fa421e04-c16c-4d50-a797-17ebf8fe31b0",
+    "name": {
+      "FR": "Tomate Timenta",
+      "EN": "Timenta Tomato",
+      "DE": "Timenta Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "91cde2e9-94e6-43c8-9442-4f99b6ee88df",
+    "name": {
+      "FR": "Tomate Totem",
+      "EN": "Totem Tomato",
+      "DE": "Totem Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "b9918471-f7cd-42c4-964b-ca0565725a97",
+    "name": {
+      "FR": "Tomate Tumbling",
+      "EN": "Tumbling Tomato",
+      "DE": "Tumbling Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "a1741eed-5a8e-49cd-977d-164170488e5e",
+    "name": {
+      "FR": "Tomate Tyfrane",
+      "EN": "Tyfrane Tomato",
+      "DE": "Tyfrane Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "a912705f-1c1d-46d0-bd5f-ae8eac94be5e",
+    "name": {
+      "FR": "Chou brocoli  Santee",
+      "EN": "Santee Broccoli",
+      "DE": "Santee Brokkoli",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "fefe2140-c8b6-447f-be99-f28432975c41",
+    "name": {
+      "FR": "Soja Dame Hanae",
+      "EN": "Dame Hanae Soy bean",
+      "DE": "Dame Hanae Soja",
+      "LT": "Glycine mix"
+    }
+  },
+  {
+    "id": "ea1d7266-1e67-49ed-be60-b5c6745acfa7",
+    "name": {
+      "FR": "Betterave Chioggia",
+      "EN": "Chioggia beet",
+      "DE": "Chioggia Rote Bete",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "7601bcec-21e3-4352-9f4e-2649955c4ed0",
+    "name": {
+      "FR": "Betterave noire d'Egypte",
+      "EN": "Egyptian black beet",
+      "DE": "Ägyptische Schwarze Rübe",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "b65ad37f-70ff-41f1-9c2c-5e4df6d21fd9",
+    "name": {
+      "FR": "Chou chinois Kaboko",
+      "EN": "Kaboko  Chinese Cabbage",
+      "DE": "Kaboko  Chinakohl",
+      "LT": "Brassica rapa V. Pekinensis"
+    }
+  },
+  {
+    "id": "ed08ca34-2463-48fb-8c35-7d2c5701528a",
+    "name": {
+      "FR": "Laitue feuille de chêne Blonde Kisheri",
+      "EN": "Kisheri Oak leaf lettuce",
+      "DE": "Kisheri Eichblattsalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "4cde36e9-117c-41e8-ae92-124050e2ce75",
+    "name": {
+      "FR": "Navet Sweetbell",
+      "EN": null,
+      "DE": "Sweetbell Rübe",
+      "LT": "Brassica Rapa"
+    }
+  },
+  {
+    "id": "0eac9cf9-9780-41ae-b04f-0b5b3eefd64e",
+    "name": {
+      "FR": "Laitue Batavia Verte Impression",
+      "EN": null,
+      "DE": "Impression Grün bataviasalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "33762a91-255a-4b45-89f0-8d027c1f5ece",
+    "name": {
+      "FR": "Laitue Toutes Saisons",
+      "EN": null,
+      "DE": "Kopfsalat Alle Jahreszeiten",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "d3e4de47-80af-4d78-92e0-92d38919d084",
+    "name": {
+      "FR": "Fenouil Castor",
+      "EN": "Castor Fennel",
+      "DE": "Castor Knollen Fenchel",
+      "LT": "Foeniculum vulgare Mill."
+    }
+  },
+  {
+    "id": "0c5bdc00-b9e5-4c62-b307-a5e95a8fa0b7",
+    "name": {
+      "FR": "Chou chinois Color",
+      "EN": "Color Chinese cabbage",
+      "DE": "Color Chinakohl",
+      "LT": "Brassica rapa L."
+    }
+  },
+  {
+    "id": "a7c34afc-4d66-4857-b0a1-326d1eabe563",
+    "name": {
+      "FR": "Fenouil Solaris",
+      "EN": "Solaris Fennel",
+      "DE": "Solaris Fenchel",
+      "LT": "Spinacia oleracea L."
+    }
+  },
+  {
+    "id": "c52b0c27-7357-445c-95b9-d0857c071be9",
+    "name": {
+      "FR": "Laitue Rougette de Montpellier",
+      "EN": null,
+      "DE": "Montpellier Rötelsalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "047626d3-e73c-4caf-b9b1-bfa7e65f0013",
+    "name": {
+      "FR": "Poirée Blonde de Lyon",
+      "EN": null,
+      "DE": "Lyon Mangold",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "17861ca7-4418-4162-8d88-7c40bc8dacb2",
+    "name": {
+      "FR": "Oignon Blanc de Paris",
+      "EN": null,
+      "DE": "Paris Lauchzwiebeln",
+      "LT": "Allium cepa L."
+    }
+  },
+  {
+    "id": "40638f66-a169-491e-88ba-d9456861dbe6",
+    "name": {
+      "FR": "Laitue Eduardo",
+      "EN": null,
+      "DE": "Eduardo Icebersalat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "f0596903-99c0-4090-b2de-1f0213e68ebd",
+    "name": {
+      "FR": "Laitue Salad Bowl",
+      "EN": null,
+      "DE": "Rot Salat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "6bf2e489-7250-40fc-9ee7-7547892c966c",
+    "name": {
+      "FR": "Laitue salanova rouge Cousteau",
+      "EN": "Cousteau Red salanova lettuce",
+      "DE": "Cousteau Roter Salanova-Salat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "3591dd5e-390b-4615-9688-a4e23b97f47a",
+    "name": {
+      "FR": "Laitue salanova verte Xem",
+      "EN": "Xem Green salanova lettuce",
+      "DE": "Xem Grün Salanova-Salat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "04832125-a351-4188-aa03-b04999c00d07",
+    "name": {
+      "FR": "Fève Duet",
+      "EN": "Duet Broad bean",
+      "DE": "Duet Dicke Bohne",
+      "LT": "Faba vulgaris"
+    }
+  },
+  {
+    "id": "09497746-4a9a-4e6a-9694-cbbab17e8eef",
+    "name": {
+      "FR": "Tomate SunOrange",
+      "EN": "Sunorange Tomato",
+      "DE": "Sunorange Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "3e881456-459e-4680-93d9-e5c407247dbc",
+    "name": {
+      "FR": "Tomate Sunpeach",
+      "EN": "Sunpeach Tomato",
+      "DE": "Sunpeach Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "962ac00e-324f-4bf5-b831-4d09b070bc8b",
+    "name": {
+      "FR": "Tomate Noire de Crimée Yalta",
+      "EN": "Noire de Crimée Yalta Tomato",
+      "DE": "Noire de Crimée Yalta Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "d670ec52-4be9-4d9c-a8e8-97575d0b0649",
+    "name": {
+      "FR": "Poivron Olly",
+      "EN": "Olly Pepper",
+      "DE": "Olly Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "816392ea-2c4e-4dc1-8a32-a967846b7f18",
+    "name": {
+      "FR": "Tomate Mini Tiger Eyes",
+      "EN": "Mini Tiger Eyes Tomato",
+      "DE": "Mini Tiger Eyes Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "abb43f9a-4309-40bd-a081-de28108e0899",
+    "name": {
+      "FR": "Tomate Donna",
+      "EN": "Donna Tomato",
+      "DE": "Donna Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "7269ab91-d2df-4ac4-aeea-65016bd50820",
+    "name": {
+      "FR": "Poivron Buddy",
+      "EN": "Buddy Pepper",
+      "DE": "Buddy Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "11cd8624-9bcd-4268-a74b-0cafa55be8f5",
+    "name": {
+      "FR": "Poivron Ilyn",
+      "EN": "Ilyn Pepper",
+      "DE": "Ilyn Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "a64e6364-8dcb-4a66-92ee-3b25a874f127",
+    "name": {
+      "FR": "Tomate Bauna",
+      "EN": "Bauna Tomato",
+      "DE": "Bauna Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "1e63fd20-9646-4d5c-991e-02838a3d9b3d",
+    "name": {
+      "FR": "Poivron Olly",
+      "EN": "Olly Pepper",
+      "DE": "Olly Paprika",
+      "LT": null
+    }
+  },
+  {
+    "id": "3246ccd2-38c5-4bce-8bb3-6a1575961d73",
+    "name": {
+      "FR": "Aubergine Caliopé",
+      "EN": "Caliope Eggplant",
+      "DE": "Aubergine Caliope",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "d6d37e07-1960-4cee-8991-5d64a8c6a20a",
+    "name": {
+      "FR": "Courgette Parthénon",
+      "EN": "Parthénon Zucchini",
+      "DE": "Parthénon Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "5f60e581-4090-4980-b456-1474c0a01d5c",
+    "name": {
+      "FR": "Aubergine Sharapova",
+      "EN": "Sharapova Eggplant",
+      "DE": "Sharapova Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "d904a256-4347-4c31-96fa-6fc3a64578c4",
+    "name": {
+      "FR": "Aubergine Bellini",
+      "EN": "Bellini Eggplant",
+      "DE": "Bellini Auberginen",
+      "LT": "Solanum melongena L."
+    }
+  },
+  {
+    "id": "8c7c8ec7-4463-44aa-81c3-833f804c6ba8",
+    "name": {
+      "FR": "Tomate Atyliade",
+      "EN": "Atyliade Tomato",
+      "DE": "Atyliade Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "c3abd7cf-1e0f-4035-8720-41e9f9e5d6b4",
+    "name": {
+      "FR": "Tomate Bauna",
+      "EN": null,
+      "DE": null,
+      "LT": null
+    }
+  },
+  {
+    "id": "b56bbb16-ba4a-4f26-b806-768aa1d62590",
+    "name": {
+      "FR": "Melon Funambule",
+      "EN": null,
+      "DE": "Funambule Wassermelone",
+      "LT": "Cucumis melo L."
+    }
+  },
+  {
+    "id": "5689975e-6f01-4ee3-b974-241d11c43403",
+    "name": {
+      "FR": "Laitue Iceberg Eduardo",
+      "EN": null,
+      "DE": "Iceberg Eduardo Salat",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "5ffa1f36-9120-4301-93ed-f06418e36529",
+    "name": {
+      "FR": "Tomate Heartbreakers Dora",
+      "EN": null,
+      "DE": "Heartbreaker Tomato",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "ae8dec35-35e6-4bd7-a47d-80746fcd6e93",
+    "name": {
+      "FR": "Poirée à Carde Blanche Largo",
+      "EN": null,
+      "DE": "Largo Mangold",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "be25c7f2-49a4-478e-93bc-1791c8634f95",
+    "name": {
+      "FR": "Concombre Corinto",
+      "EN": null,
+      "DE": "Corinto Gurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "45c40f79-997f-468d-95fc-d726772617f9",
+    "name": {
+      "FR": "Tomate Eduardo",
+      "EN": null,
+      "DE": "Eduardo Tomato",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "c363ec50-1edf-4eb4-b952-394bfc1ada38",
+    "name": {
+      "FR": "Cornichon Bruno",
+      "EN": "Bruno Pickling cucumber",
+      "DE": "Bruno Einlegegurke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "e13896ca-05f8-44d5-967f-9e80802f65f9",
+    "name": {
+      "FR": "Oignon Blanc Tycoon",
+      "EN": null,
+      "DE": "Tycoon Zwiebel",
+      "LT": "Allium cepa L."
+    }
+  },
+  {
+    "id": "510c43de-ff24-4eac-93c9-f82de49e1773",
+    "name": {
+      "FR": "Tomate Monetina",
+      "EN": null,
+      "DE": "Monetina Tomato",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "a247801b-5dfc-4f3c-af21-031852c94c23",
+    "name": {
+      "FR": "Tomate Yellowgold",
+      "EN": null,
+      "DE": "Yellowgold Tomato",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "38eb1185-df16-46e6-aa62-56b75676bac6",
+    "name": {
+      "FR": "Courgette Gravity",
+      "EN": null,
+      "DE": "Gravity Zucchini",
+      "LT": "Cucurbita pepo L."
+    }
+  },
+  {
+    "id": "cd6529ba-ecf3-481a-bf53-85f88fda538d",
+    "name": {
+      "FR": "Pastèque Nanoour",
+      "EN": null,
+      "DE": "Nanoor Wassermelon",
+      "LT": "Citrullus lanatus"
+    }
+  },
+  {
+    "id": "6146eb86-9b53-40bd-a0d8-4efa9a03a734",
+    "name": {
+      "FR": "Tomate Nightshade",
+      "EN": null,
+      "DE": "Nightshade Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "9428b934-c55c-47b3-af24-3043328f8d5c",
+    "name": {
+      "FR": "Concombre Cumini",
+      "EN": null,
+      "DE": "Cumini Gürke",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "6e7ecf97-ab5f-4a2b-9236-82bdb0605e1a",
+    "name": {
+      "FR": "Navet boule d'or Goldana",
+      "EN": null,
+      "DE": "Goldana Rübe",
+      "LT": "Brassica Rapa"
+    }
+  },
+  {
+    "id": "85f84af1-3138-4f6d-ae3a-f94d522e14e8",
+    "name": {
+      "FR": "Chicorée scarole rouge de Verone",
+      "EN": null,
+      "DE": "Rot Zichoriren Verone",
+      "LT": "Cichorium endivia L."
+    }
+  },
+  {
+    "id": "76fa59be-8aa6-4529-ab92-794d1cb8e218",
+    "name": {
+      "FR": "Chou brocoli Belstar",
+      "EN": null,
+      "DE": "Brocoli Kohl Belstar",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "e46b6cfe-9f4c-411c-b8b5-0ab17e067452",
+    "name": {
+      "FR": "Betterave Moneta",
+      "EN": null,
+      "DE": "Moneta Rote Bete",
+      "LT": "Beta vulgaris L."
+    }
+  },
+  {
+    "id": "bad15b0f-9c1b-4088-b1f9-2dbadac7269c",
+    "name": {
+      "FR": "Chou rave Purpuran",
+      "EN": null,
+      "DE": "Purpuran Kohlrabi",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "04b0d180-12ff-4a9a-9a9b-e4b4f09535ad",
+    "name": {
+      "FR": "Chou Peh Tsai Enduro",
+      "EN": null,
+      "DE": "Kohl Peh Tsai Enduro",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "fb1330a4-3d07-4555-9c8e-29bef93d1c78",
+    "name": {
+      "FR": "Chou Peh Tsai Bopak",
+      "EN": null,
+      "DE": "Kohl Peh Tsai Bopak",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "8b3eacc7-6ac7-4c40-b122-15e62fa99850",
+    "name": {
+      "FR": "Ciboulette Broad Leaf",
+      "EN": "Broad Leaf  Chives",
+      "DE": "Broad Leaf  Schnittlauch",
+      "LT": "Allium schoenoprasum L."
+    }
+  },
+  {
+    "id": "a896268a-bea0-4b7e-9931-9a94be46b662",
+    "name": {
+      "FR": "Laitue grasse Rafale Rouge",
+      "EN": "Red Rafale Butterhead Lettuce",
+      "DE": "Roter Butterkopfsalat Rafale",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "61b582ca-c247-4d77-9088-3c945e17c530",
+    "name": {
+      "FR": "Poireau Herbstriesen 2 race Basel",
+      "EN": "Leek Herbstriesen 2 Basel variety",
+      "DE": "Lauch Herbstriesen 2 Sorte Basel",
+      "LT": "Allium porrum"
+    }
+  },
+  {
+    "id": "c913f2ef-46fb-467e-948a-5f58ec9576a6",
+    "name": {
+      "FR": "Laitue Feuille de Chêne Kitsch",
+      "EN": "Kitsch Oakleaf Lettuce",
+      "DE": "Eichenblattsalat Kitsch",
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "53f1d295-d2d1-464c-8e61-97203f1f76fd",
+    "name": {
+      "FR": "Laitue Jeunes Pousses",
+      "EN": null,
+      "DE": null,
+      "LT": "Lactuca sativa L."
+    }
+  },
+  {
+    "id": "18a042bf-0706-4a8c-9572-3e9372108249",
+    "name": {
+      "FR": "Oignon rouge Divinistar",
+      "EN": null,
+      "DE": "Rot Zwiebel Dinivistar",
+      "LT": "Allium cepa L."
+    }
+  },
+  {
+    "id": "85ae2294-83ca-49d7-9a9a-31c45f0f6ef4",
+    "name": {
+      "FR": "PISSENLIT Vert de Montmagny",
+      "EN": null,
+      "DE": null,
+      "LT": "Taraxacum"
+    }
+  },
+  {
+    "id": "f26c867f-8737-440e-8762-724d8e89c628",
+    "name": {
+      "FR": "Poireau Porbella",
+      "EN": null,
+      "DE": "Lauch Porbella",
+      "LT": "Allium porrum"
+    }
+  },
+  {
+    "id": "77b9df59-6feb-4752-97a5-2c0dcba28fea",
+    "name": {
+      "FR": "Chou Fleur Chambord",
+      "EN": null,
+      "DE": "Chambord Blumenkohl",
+      "LT": "Brassica oleracea L."
+    }
+  },
+  {
+    "id": "ff5ece74-8e1b-4bd1-a6f7-c4e14554a829",
+    "name": {
+      "FR": "Pois vert Mangetout Delikata",
+      "EN": null,
+      "DE": "Zwerg- und Halbzwerg-Zuckererbsen DELIKATA",
+      "LT": "Pisum sativum"
+    }
+  },
+  {
+    "id": "827c9b86-b1d9-4392-90d8-ad22c75f8e8f",
+    "name": {
+      "FR": "Pois nains à écosser Kelvedon",
+      "EN": null,
+      "DE": "Zuckererbsen Kelvedeon",
+      "LT": "Pisum sativum"
+    }
+  },
+  {
+    "id": "be4f9d55-42d6-443f-a7f6-498e8fb17455",
+    "name": {
+      "FR": "Basilic Prospera",
+      "EN": null,
+      "DE": "Prospera Basilikum",
+      "LT": "Ocimum basilicum"
+    }
+  },
+  {
+    "id": "dfc8dcc1-029e-45ee-b908-2c9343acae66",
+    "name": {
+      "FR": "Poivron Estilo",
+      "EN": null,
+      "DE": "Estilo Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "58aa3324-9686-4aa2-91ca-0915610b88bb",
+    "name": {
+      "FR": "Piment Gorrya",
+      "EN": null,
+      "DE": "Gorrya Chilipulver",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "af133e9a-4e38-4c0b-87ab-0b36ec8f1eca",
+    "name": {
+      "FR": "Poivron Kyria",
+      "EN": null,
+      "DE": "Kyria Paprika",
+      "LT": "Capsicum annuum L."
+    }
+  },
+  {
+    "id": "67cad304-0d23-421a-a65a-188e5064d4a2",
+    "name": {
+      "FR": "Tomate Dwarf Black fire",
+      "EN": null,
+      "DE": "Dwarf Black fire Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "63e278e1-4d6b-44f3-bc66-b782ec872165",
+    "name": {
+      "FR": "Tomate Green Tiger",
+      "EN": null,
+      "DE": "Green Tiger Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "62ba3042-bf6e-48a3-b00f-77199ef0cce4",
+    "name": {
+      "FR": "Tomate DWARF FRANKLIN COUNTY",
+      "EN": null,
+      "DE": "DWARF FRANKLIN COUNTY Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "9cb19726-94f6-4588-bd4e-775d42d98134",
+    "name": {
+      "FR": "Tomate Blush",
+      "EN": null,
+      "DE": "Blush Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "c8d8f109-2fb8-426f-9d0b-a72e2070ae8b",
+    "name": {
+      "FR": "Tomate Dwarf Firebird Sweet",
+      "EN": null,
+      "DE": "Dwarf Firebird Sweet Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "b13dbd5d-d403-4830-a3b6-965ded3fc99e",
+    "name": {
+      "FR": "Tomate Dwarf Beauty King",
+      "EN": null,
+      "DE": "Dwarf Beauty King Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "d0a56bc6-8801-457a-9556-baa3eb33c271",
+    "name": {
+      "FR": "Tomate Maralinga",
+      "EN": null,
+      "DE": "Maralinga Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "f8a494db-8af9-4c41-920e-d574e653a286",
+    "name": {
+      "FR": "Tomate Olivette Striée",
+      "EN": null,
+      "DE": "Olivette Striée Tomate",
+      "LT": "Solanum lycopersicum L."
+    }
+  },
+  {
+    "id": "1bee4901-9ac6-42b9-8ff6-e091bb80b0fa",
+    "name": {
+      "FR": "Concombre Snack",
+      "EN": null,
+      "DE": null,
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "defcdd72-4c5a-43f4-9854-b42b1c0b71dc",
+    "name": {
+      "FR": "Courgette Kimber",
+      "EN": null,
+      "DE": "Kimber Zucchini",
+      "LT": "Cucumis sativus L."
+    }
+  },
+  {
+    "id": "a33b9558-4e5e-4447-87c2-604b5d56b552",
+    "name": {
+      "FR": "Cosmos",
+      "EN": null,
+      "DE": "Kosmos",
+      "LT": "Cosmos bipinnatus"
+    }
+  },
+  {
+    "id": "d9a25f69-c128-497c-bee9-0b135e2f5c99",
+    "name": {
+      "FR": "Zinnia",
+      "EN": null,
+      "DE": "Zinnien",
+      "LT": "Zinnia elegans"
+    }
+  },
+  {
+    "id": "71cd4755-b43f-47ca-adcb-66e9eebb0af7",
+    "name": {
+      "FR": "Hysope",
+      "EN": null,
+      "DE": "Ysop",
+      "LT": "Hyssopus officinalis"
+    }
+  },
+  {
+    "id": "4589df2b-40dd-48d1-ada6-c06a5cbd15b7",
+    "name": {
+      "FR": "Achillée",
+      "EN": null,
+      "DE": "Schafgarbe",
+      "LT": "Achillea millefolium"
+    }
+  },
+  {
+    "id": "2e9fd6c7-0a53-4760-b9b7-14607daec6e5",
+    "name": {
+      "FR": "Soucis",
+      "EN": null,
+      "DE": "Ringelblume",
+      "LT": "calendula officinalis"
+    }
+  },
+  {
+    "id": "7b5e6c6a-8982-47fa-a0e2-5b5b2952b458",
+    "name": {
+      "FR": "Consoude",
+      "EN": null,
+      "DE": "Beinwell",
+      "LT": "Symphytum officinale"
+    }
+  },
+  {
+    "id": "86519703-f74b-47c0-ae89-dfae91439071",
+    "name": {
+      "FR": "Valerianne",
+      "EN": null,
+      "DE": "Baldrian",
+      "LT": "Valeriana officinalis"
+    }
+  },
+  {
+    "id": "40fc1d3f-2632-4e6d-ab45-3938ab57c4d3",
+    "name": {
+      "FR": "Calendula",
+      "EN": null,
+      "DE": "Ringelblume",
+      "LT": "Calendula officinalis"
+    }
+  },
+  {
+    "id": "724b680c-8039-4baf-82d6-9a9475177d29",
+    "name": {
+      "FR": "Shiso",
+      "EN": null,
+      "DE": "Shiso",
+      "LT": "Perilla frutescens"
+    }
+  },
+  {
+    "id": "05c9d626-eafc-4c92-832a-b1f9261a8968",
+    "name": {
+      "FR": "Tagete",
+      "EN": null,
+      "DE": "Studentenblume",
+      "LT": "Tagetes erecta"
+    }
+  },
+  {
+    "id": "b9c5391b-2728-438f-ab67-d32a2834a680",
+    "name": {
+      "FR": "Myosotis",
+      "EN": null,
+      "DE": "Vergissmeinnicht",
+      "LT": "Myosotis spp."
+    }
+  },
+  {
+    "id": "64c7cf48-79e7-4ea2-804c-1cd763372ec8",
+    "name": {
+      "FR": "Lupin",
+      "EN": null,
+      "DE": "Lupine",
+      "LT": "Lupinus polyphyllus"
+    }
+  },
+  {
+    "id": "9a83c228-f23f-42b8-aa74-5a8157b2f34e",
+    "name": {
+      "FR": "Pois de senteur",
+      "EN": null,
+      "DE": "Duftende Platterbse",
+      "LT": "Lathyrus odoratus"
+    }
+  }
+]

@@ -13,7 +13,9 @@
       "Bash(dotnet clean:*)",
       "Bash(dotnet build)",
       "Bash(grep:*)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(find:*)",
+      "Bash(apt list:*)"
     ],
     "deny": []
   }

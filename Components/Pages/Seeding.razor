@@ -1,4 +1,5 @@
 @page "/seeding"
+@rendermode InteractiveServer
 @using PlantApp.Models
 @using PlantApp.Services
 @using Microsoft.AspNetCore.Components.Web
@@ -27,10 +28,8 @@
                     <MudStack>
                         <MudTextField @ref="quantityField" @bind-Value="quantity" Label="Quantity" Variant="Variant.Outlined" 
                                      T="int" InputType="InputType.Number" 
-                                     TextChanged="@OnQuantityChanged"
-                                     OnKeyDown="@OnQuantityKeyDown" 
-                                     OnBlur="@OnQuantityBlur"
-                                     Immediate="true" 
+                                     DebounceInterval="300" OnDebounceIntervalElapsed="@OnQuantityDebounceElapsed"
+                                     OnBlur="@OnQuantityBlur" TextUpdateSuppression="false"
                                      AutoFocus="true" />
                         
                         <MudSelect @ref="plantSelect" T="Plant" @bind-Value="selectedPlant" Label="Select Plant" Variant="Variant.Outlined" 
@@ -145,6 +144,7 @@
         // Load existing seeding entries from local storage or service
     }
 
+
     private void CreateSeedingEntry()
     {
         if (selectedPlant == null || quantity <= 0 || seedingDate == null) return;
@@ -203,21 +203,15 @@
         }
     }
 
-    private async Task OnQuantityKeyDown(KeyboardEventArgs args)
+    private async Task OnQuantityDebounceElapsed(string value)
     {
-        if (args.Key == "Enter")
-        {
-            shouldAutoAdvance = true;
-            // Most barcode scanners send Enter after the data
-            // The blur event will handle the focus switch
-        }
-    }
-
-    private async Task OnQuantityChanged(string value)
-    {
-        if (!string.IsNullOrEmpty(value) && int.TryParse(value, out var qty))
+        if (!string.IsNullOrEmpty(value) && int.TryParse(value, out int qty) && qty > 0)
         {
             quantity = qty;
+            shouldAutoAdvance = true;
+            // Barcode scanner has finished input, trigger auto-advance
+            await Task.Delay(50); // Small delay to ensure UI is ready
+            await FocusPlantSelect();
         }
     }
 
